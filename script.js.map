@@ -1,0 +1,16 @@
+{
+  "version": 3,
+  "names": [
+    "document",
+    "querySelector",
+    "addEventListener",
+    "e",
+    "preventDefault",
+    "alert"
+  ],
+  "sources": [
+    "script.jsx"
+  ],
+  "mappings": "AAAAA,QAAQ,CAACC,aAAa,CAAC,MAAM,CAAC,CAACC,gBAAgB,CAAC,QAAQ,EAAE,UAAUC,CAAC,EAAE;EACrEA,CAAC,CAACC,cAAc,CAAC,CAAC;EAClBC,KAAK,CAAC,4CAA4C,CAAC;AACrD,CAAC,CAAC",
+  "ignoreList": []
+}

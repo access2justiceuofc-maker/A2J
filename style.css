@@ -976,3 +976,95 @@ footer p {
 .sponsor-btn:hover {
   background: #5d3b88;
 }
+/* FINAL FOOTER FIX — keep at bottom of style.css */
+
+footer,
+.site-footer {
+  display: block !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  background: linear-gradient(135deg, #2d1447, #6845a5) !important;
+  color: white !important;
+  padding: 50px 8% 25px !important;
+  margin: 0 !important;
+}
+
+footer .footer-container,
+.site-footer .footer-container {
+  width: 100% !important;
+  max-width: 1150px !important;
+  margin: 0 auto !important;
+  display: grid !important;
+  grid-template-columns: 1fr 0.8fr 1.4fr !important;
+  gap: 50px !important;
+  align-items: start !important;
+}
+
+footer h3,
+.site-footer h3 {
+  color: white !important;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 28px;
+  margin: 0 0 15px;
+}
+
+footer p,
+.site-footer p {
+  color: rgba(255, 255, 255, 0.88) !important;
+  font-size: 16px;
+  line-height: 1.7;
+  margin: 0 0 8px;
+}
+
+footer a,
+.site-footer a {
+  display: block !important;
+  color: white !important;
+  text-decoration: none !important;
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 7px;
+}
+
+footer a:hover,
+.site-footer a:hover {
+  text-decoration: underline !important;
+}
+
+footer .footer-bottom,
+.site-footer .footer-bottom {
+  max-width: 1150px;
+  margin: 35px auto 0;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+@media (max-width: 700px) {
+  footer .footer-container,
+  .site-footer .footer-container {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+}
+/* RESTORE PURPLE SECTIONS */
+
+.creed,
+.quote-section,
+.purple-section,
+.cta-section {
+  background: linear-gradient(135deg, #2d1447, #6845a5) !important;
+  color: white !important;
+}
+
+.creed h2,
+.creed p,
+.quote-section h2,
+.quote-section p,
+.purple-section h2,
+.purple-section p,
+.cta-section h2,
+.cta-section p {
+  color: white !important;
+}

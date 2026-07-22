@@ -1,4 +1,4 @@
-:root {
+root {
   --cream: #f8f3e8;
   --cream2: #fffaf0;
   --purple: #32105c;
@@ -570,45 +570,48 @@ footer p {
   font-size: 18px;
   line-height: 1.8;
 }
-/* FINAL TEAM LAYOUT — keep this at the bottom of style.css */
 
 .team-grid {
-  display: grid !important;
-  grid-template-columns: repeat(2, 240px) !important;
-  justify-content: center !important;
-  gap: 24px !important;
-  width: 100% !important;
-  margin: 40px auto 0 !important;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
 }
+
 .team-card {
-  width: 240px !important;
-  max-width: 280px !important;
-  box-sizing: border-box !important;
   background: white;
-  border: 1px solid #e8dede;
-  border-radius: 20px;
-  padding: 18px;
-  box-shadow: 0 12px 35px rgba(40, 20, 70, 0.08);
+  border: 1px solid #e8ded0;
+  border-radius: 26px;
+  padding: 22px;
+  box-shadow: 0 20px 60px rgba(40, 20, 70, 0.06);
+}
 
 .team-photo {
-  display: block !important;
-  width: 100% !important;
-  height: 300px !important;
-  object-fit: cover !important;
-  object-position: center !important;
-  border-radius: 16px;
-  margin-bottom: 18px;
+  height: 250px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #2d1447, #6d4aa2);
+  margin-bottom: 24px;
 }
 
-@media (max-width: 650px) {
+.team-card h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 30px;
+  color: #2d1447;
+  font-weight: 500;
+}
+
+.team-card p {
+  color: #6a6473;
+  margin-top: 6px;
+  font-size: 15px;
+}
+
+@media (max-width: 900px) {
   .team-grid {
-    grid-template-columns: 1fr !important;
-    justify-items: center !important;
+    grid-template-columns: 1fr 1fr;
   }
 
-  .team-card {
-    width: min(100%, 320px) !important;
-    max-width: 320px !important;
+  .team-header h2 {
+    font-size: 48px;
   }
 }
 
@@ -773,80 +776,97 @@ footer p {
     font-size: 1rem;
   }
 }
-footer {
-  background: linear-gradient(135deg, #2d1447, #6d4aa2);
+.footer {
+  background: linear-gradient(135deg, #2d1447, #56308b);
+
   color: white;
-  padding: 55px 8% 30px;
+
+  margin-top: 120px;
+
+  padding: 70px 8% 25px;
+
+  border-radius: 35px 35px 0 0;
 }
 
-.footer-container {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr 1.5fr;
-  gap: 60px;
+.footer-content {
   max-width: 1200px;
-  margin: 0 auto;
-  align-items: start;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: 3fr 1fr 2fr 1.5fr;
+
+  gap: 55px;
 }
 
-.footer-column h3 {
+.footer h2,
+.footer h3 {
   font-family: "Cormorant Garamond", serif;
-  font-size: 28px;
-  margin: 0 0 20px;
-}
 
-.footer-column p,
-.footer-column a {
-  font-size: 16px;
-  line-height: 1.7;
+  font-size: 25px;
+
+  margin-bottom: 18px;
+
   color: white;
 }
 
-.footer-column a {
-  display: block;
-  text-decoration: none;
-  margin-bottom: 10px;
+.footer h3 {
+  font-size: 25px;
 }
 
-.footer-column a:hover {
-  text-decoration: underline;
+.footer p,
+.footer a {
+  color: rgba(255, 255, 255, 0.88);
+
+  font-size: 17px;
+
+  line-height: 1.9;
+
+  text-decoration: none;
+}
+
+.footer-links {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+
+  transform: translateX(6px);
+
+  transition: 0.3s;
 }
 
 .footer-bottom {
-  max-width: 1200px;
-  margin: 35px auto 0;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+
+  margin-top: 55px;
+
+  padding-top: 22px;
+
   text-align: center;
-  font-size: 14px;
+
+  color: rgba(255, 255, 255, 0.75);
+
+  font-size: 15px;
 }
 
-@media (max-width: 800px) {
-  .footer-container {
-    grid-template-columns: 1fr 1fr;
-    gap: 35px;
-  }
-
-  .footer-column:last-child {
-    grid-column: 1 / -1;
-  }
-}
-
-@media (max-width: 550px) {
-  footer {
-    padding: 45px 24px 25px;
-  }
-
-  .footer-container {
+@media (max-width: 700px) {
+  .footer-content {
     grid-template-columns: 1fr;
-    gap: 30px;
+
+    gap: 45px;
+
+    text-align: center;
   }
 
-  .footer-column:last-child {
-    grid-column: auto;
-  }
-
-  .footer-bottom {
-    text-align: left;
+  .footer-links {
+    align-items: center;
   }
 }
 /* Sponsorship Section */
@@ -955,146 +975,4 @@ footer {
 
 .sponsor-btn:hover {
   background: #5d3b88;
-}
-/* =========================
-   PAGE CONTENT FIX
-========================= */
-
-.sponsorship,
-.membership {
-  padding: 90px 8%;
-  background: #fbf7f2;
-}
-
-.sponsorship > *,
-.membership > * {
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.sponsorship h1,
-.membership h1 {
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(46px, 6vw, 72px);
-  line-height: 1;
-  color: #2d1447;
-  margin: 10px 0 20px;
-}
-
-.sponsorship h2,
-.membership h2 {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 32px;
-  color: #2d1447;
-  margin: 28px auto 8px;
-}
-
-.sponsorship p,
-.membership p,
-.membership li {
-  font-size: 18px;
-  line-height: 1.7;
-  color: #625d68;
-}
-
-.membership ul {
-  list-style: none;
-  padding: 0;
-  margin: 20px auto;
-}
-
-.membership li {
-  margin-bottom: 10px;
-}
-
-/* =========================
-   FOOTER FIX
-========================= */
-
-.site-footer {
-  background: linear-gradient(135deg, #2d1447, #6542a3);
-  color: white;
-  padding: 55px 8% 25px;
-}
-
-.site-footer .footer-container {
-  max-width: 1150px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 0.7fr 1.4fr;
-  gap: 55px;
-  align-items: start;
-}
-
-.site-footer .footer-column {
-  min-width: 0;
-}
-
-.site-footer h3 {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 28px;
-  color: white;
-  margin: 0 0 18px;
-}
-
-.site-footer p {
-  color: rgba(255, 255, 255, 0.88);
-  font-size: 16px;
-  line-height: 1.7;
-  margin: 0 0 8px;
-}
-
-.site-footer a {
-  display: block;
-  width: fit-content;
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
-  line-height: 1.7;
-  margin-bottom: 7px;
-}
-
-.site-footer a:hover {
-  text-decoration: underline;
-}
-
-.site-footer .footer-bottom {
-  max-width: 1150px;
-  margin: 35px auto 0;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.25);
-  text-align: center;
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 14px;
-}
-
-@media (max-width: 800px) {
-  .sponsorship,
-  .membership {
-    padding: 65px 6%;
-  }
-
-  .site-footer .footer-container {
-    grid-template-columns: 1fr 1fr;
-    gap: 35px;
-  }
-
-  .site-footer .footer-column:last-child {
-    grid-column: 1 / -1;
-  }
-}
-
-@media (max-width: 560px) {
-  .site-footer {
-    padding: 45px 24px 25px;
-  }
-
-  .site-footer .footer-container {
-    grid-template-columns: 1fr;
-  }
-
-  .site-footer .footer-column:last-child {
-    grid-column: auto;
-  }
 }

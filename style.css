@@ -956,3 +956,145 @@ footer {
 .sponsor-btn:hover {
   background: #5d3b88;
 }
+/* =========================
+   PAGE CONTENT FIX
+========================= */
+
+.sponsorship,
+.membership {
+  padding: 90px 8%;
+  background: #fbf7f2;
+}
+
+.sponsorship > *,
+.membership > * {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sponsorship h1,
+.membership h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(46px, 6vw, 72px);
+  line-height: 1;
+  color: #2d1447;
+  margin: 10px 0 20px;
+}
+
+.sponsorship h2,
+.membership h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 32px;
+  color: #2d1447;
+  margin: 28px auto 8px;
+}
+
+.sponsorship p,
+.membership p,
+.membership li {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #625d68;
+}
+
+.membership ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px auto;
+}
+
+.membership li {
+  margin-bottom: 10px;
+}
+
+/* =========================
+   FOOTER FIX
+========================= */
+
+.site-footer {
+  background: linear-gradient(135deg, #2d1447, #6542a3);
+  color: white;
+  padding: 55px 8% 25px;
+}
+
+.site-footer .footer-container {
+  max-width: 1150px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 0.7fr 1.4fr;
+  gap: 55px;
+  align-items: start;
+}
+
+.site-footer .footer-column {
+  min-width: 0;
+}
+
+.site-footer h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 28px;
+  color: white;
+  margin: 0 0 18px;
+}
+
+.site-footer p {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 16px;
+  line-height: 1.7;
+  margin: 0 0 8px;
+}
+
+.site-footer a {
+  display: block;
+  width: fit-content;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 7px;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+.site-footer .footer-bottom {
+  max-width: 1150px;
+  margin: 35px auto 0;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+}
+
+@media (max-width: 800px) {
+  .sponsorship,
+  .membership {
+    padding: 65px 6%;
+  }
+
+  .site-footer .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+  }
+
+  .site-footer .footer-column:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 560px) {
+  .site-footer {
+    padding: 45px 24px 25px;
+  }
+
+  .site-footer .footer-container {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer .footer-column:last-child {
+    grid-column: auto;
+  }
+}

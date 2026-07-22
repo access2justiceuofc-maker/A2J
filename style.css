@@ -773,97 +773,80 @@ footer p {
     font-size: 1rem;
   }
 }
-.footer {
-  background: linear-gradient(135deg, #2d1447, #56308b);
-
+footer {
+  background: linear-gradient(135deg, #2d1447, #6d4aa2);
   color: white;
-
-  margin-top: 120px;
-
-  padding: 70px 8% 25px;
-
-  border-radius: 35px 35px 0 0;
+  padding: 55px 8% 30px;
 }
 
-.footer-content {
-  max-width: 1200px;
-
-  margin: auto;
-
+.footer-container {
   display: grid;
-
-  grid-template-columns: 3fr 1fr 2fr 1.5fr;
-
-  gap: 55px;
+  grid-template-columns: 1.2fr 0.8fr 1.5fr;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: start;
 }
 
-.footer h2,
-.footer h3 {
+.footer-column h3 {
   font-family: "Cormorant Garamond", serif;
+  font-size: 28px;
+  margin: 0 0 20px;
+}
 
-  font-size: 25px;
-
-  margin-bottom: 18px;
-
+.footer-column p,
+.footer-column a {
+  font-size: 16px;
+  line-height: 1.7;
   color: white;
 }
 
-.footer h3 {
-  font-size: 25px;
-}
-
-.footer p,
-.footer a {
-  color: rgba(255, 255, 255, 0.88);
-
-  font-size: 17px;
-
-  line-height: 1.9;
-
+.footer-column a {
+  display: block;
   text-decoration: none;
+  margin-bottom: 10px;
 }
 
-.footer-links {
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 12px;
-}
-
-.footer-links a:hover {
-  color: #ffffff;
-
-  transform: translateX(6px);
-
-  transition: 0.3s;
+.footer-column a:hover {
+  text-decoration: underline;
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.18);
-
-  margin-top: 55px;
-
-  padding-top: 22px;
-
+  max-width: 1200px;
+  margin: 35px auto 0;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
   text-align: center;
-
-  color: rgba(255, 255, 255, 0.75);
-
-  font-size: 15px;
+  font-size: 14px;
 }
 
-@media (max-width: 700px) {
-  .footer-content {
-    grid-template-columns: 1fr;
-
-    gap: 45px;
-
-    text-align: center;
+@media (max-width: 800px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
   }
 
-  .footer-links {
-    align-items: center;
+  .footer-column:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 550px) {
+  footer {
+    padding: 45px 24px 25px;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footer-column:last-child {
+    grid-column: auto;
+  }
+
+  .footer-bottom {
+    text-align: left;
   }
 }
 /* Sponsorship Section */

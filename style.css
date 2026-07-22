@@ -570,55 +570,48 @@ footer p {
   font-size: 18px;
   line-height: 1.8;
 }
+/* FINAL TEAM LAYOUT — keep this at the bottom of style.css */
 
 .team-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 28px;
-  width: 100%;
-  max-width: 1000px;
-  margin: 40px auto 0;
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 28px !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 40px 0 0 !important;
 }
 
 .team-card {
+  width: auto !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+
   background: white;
   border: 1px solid #e8dede;
   border-radius: 20px;
   padding: 18px;
   box-shadow: 0 12px 35px rgba(40, 20, 70, 0.08);
-  min-width: 0;
 }
 
 .team-photo {
-  display: block;
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  object-position: center;
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  height: 350px !important;
+  object-fit: cover !important;
+  object-position: center !important;
   border-radius: 16px;
   margin-bottom: 18px;
 }
 
-.team-card h3 {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 26px;
-  color: #2d1447;
-  font-weight: 600;
-  margin: 0;
-}
-
-.team-card p {
-  color: #6a6473;
-  margin: 6px 0 0;
-}
-
-@media (max-width: 600px) {
+@media (max-width: 650px) {
   .team-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
 
   .team-photo {
-    height: 340px;
+    height: 400px !important;
   }
 }
 

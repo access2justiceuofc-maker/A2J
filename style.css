@@ -1,4 +1,4 @@
-root {
+:root {
   --cream: #f8f3e8;
   --cream2: #fffaf0;
   --purple: #32105c;
@@ -572,46 +572,56 @@ footer p {
 }
 
 .team-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 28px;
+  display: grid !important;
+  grid-template-columns: repeat(2, 280px) !important;
+  justify-content: center !important;
+  gap: 28px !important;
+  width: 100% !important;
+  margin: 40px auto 0 !important;
 }
 
 .team-card {
+  width: 280px !important;
+  max-width: 280px !important;
+  box-sizing: border-box !important;
   background: white;
-  border: 1px solid #e8ded0;
-  border-radius: 26px;
-  padding: 22px;
-  box-shadow: 0 20px 60px rgba(40, 20, 70, 0.06);
+  border: 1px solid #e8dede;
+  border-radius: 20px;
+  padding: 18px;
+  box-shadow: 0 12px 35px rgba(40, 20, 70, 0.08);
 }
 
 .team-photo {
-  height: 250px;
-  border-radius: 20px;
-  background: linear-gradient(135deg, #2d1447, #6d4aa2);
-  margin-bottom: 24px;
+  display: block !important;
+  width: 100% !important;
+  height: 300px !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  border-radius: 16px;
+  margin-bottom: 18px;
 }
 
 .team-card h3 {
   font-family: "Cormorant Garamond", serif;
-  font-size: 30px;
+  font-size: 28px;
   color: #2d1447;
-  font-weight: 500;
+  margin: 0;
 }
 
 .team-card p {
   color: #6a6473;
-  margin-top: 6px;
-  font-size: 15px;
+  margin: 6px 0 0;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 650px) {
   .team-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr !important;
+    justify-items: center !important;
   }
 
-  .team-header h2 {
-    font-size: 48px;
+  .team-card {
+    width: min(100%, 320px) !important;
+    max-width: 320px !important;
   }
 }
 

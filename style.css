@@ -1070,3 +1070,144 @@ footer p {
         text-align: left;
     }
 }
+/* UPCOMING EVENTS */
+
+.upcoming-events {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 7%;
+}
+
+.events-heading {
+  max-width: 720px;
+  margin-bottom: 35px;
+}
+
+.section-label {
+  margin-bottom: 10px;
+  color: #6947a8;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.events-heading h2 {
+  margin: 0 0 16px;
+  color: #32105c;
+  font-size: clamp(36px, 5vw, 58px);
+}
+
+.events-heading p {
+  color: #555;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.event-card {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  overflow: hidden;
+  border: 1px solid rgba(50, 16, 92, 0.12);
+  border-radius: 28px;
+  background: #ffffff;
+  box-shadow: 0 20px 50px rgba(50, 16, 92, 0.1);
+}
+
+.event-date {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 330px;
+  padding: 35px;
+  background: linear-gradient(135deg, #32105c, #6947a8);
+  color: white;
+  text-align: center;
+}
+
+.event-month {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.event-day {
+  margin-top: 8px;
+  font-size: 42px;
+  font-weight: 700;
+}
+
+.event-details {
+  padding: 45px 50px;
+}
+
+.event-details h3 {
+  margin: 0 0 12px;
+  color: #32105c;
+  font-size: 34px;
+}
+
+.event-tagline {
+  margin-bottom: 25px;
+  color: #6947a8;
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.event-info p {
+  margin: 9px 0;
+  color: #555;
+  line-height: 1.6;
+}
+
+.event-buttons {
+  display: flex;
+  gap: 14px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.primary-event-btn,
+.secondary-event-btn {
+  display: inline-block;
+  padding: 13px 24px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.primary-event-btn {
+  background: linear-gradient(135deg, #32105c, #6947a8);
+  color: white;
+}
+
+.secondary-event-btn {
+  border: 1px solid #6947a8;
+  color: #32105c;
+  background: white;
+}
+
+.primary-event-btn:hover,
+.secondary-event-btn:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 750px) {
+  .upcoming-events {
+    margin: 55px auto;
+    padding: 0 24px;
+  }
+
+  .event-card {
+    grid-template-columns: 1fr;
+  }
+
+  .event-date {
+    min-height: auto;
+    padding: 28px;
+  }
+
+  .event-details {
+    padding: 32px 25px;
+  }
+}

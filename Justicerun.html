@@ -3,988 +3,719 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Justice Run | Access to Justice</title>
-
+  <title>The Justice Run | October 17, 2026</title>
+  <meta name="description" content="The Justice Run — Run for awareness. Walk for change. Move justice forward." />
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root{
+      --ink:#1f2030;
+      --muted:#66677a;
+      --purple:#6d42d8;
+      --purple-2:#9b6df2;
+      --purple-3:#c9b4ff;
+      --lav:#f3edff;
+      --lav-2:#faf7ff;
+      --white:#ffffff;
+      --line:rgba(54,39,92,.12);
+      --shadow:0 22px 70px rgba(65,38,125,.16);
+      --radius:28px;
     }
 
-    html {
-      scroll-behavior: smooth;
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color:var(--ink);
+      background:#fff;
+      line-height:1.55;
+    }
+    a{color:inherit;text-decoration:none}
+    button,a{ -webkit-tap-highlight-color: transparent; }
+
+    .container{
+      width:min(1160px, calc(100% - 40px));
+      margin:0 auto;
     }
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #faf8fc;
-      color: #21162f;
-      line-height: 1.6;
+    .topbar{
+      position:sticky; top:0; z-index:1000;
+      backdrop-filter:blur(16px);
+      background:rgba(255,255,255,.88);
+      border-bottom:1px solid var(--line);
     }
+    .nav{
+      min-height:76px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:11px;
+      font-weight:900; letter-spacing:-.03em;
+    }
+    .brand-mark{
+      width:38px;height:38px;border-radius:12px;
+      display:grid;place-items:center;
+      background:linear-gradient(145deg,var(--purple),var(--purple-2));
+      color:#fff;font-weight:900;
+      box-shadow:0 10px 30px rgba(109,66,216,.28);
+    }
+    .navlinks{display:flex;align-items:center;gap:25px;font-size:14px;font-weight:700;color:#535367}
+    .nav-actions{display:flex;align-items:center;gap:10px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      gap:8px;
+      border-radius:999px;
+      padding:13px 20px;
+      font-weight:800;
+      font-size:14px;
+      transition:.2s ease;
+      border:1px solid transparent;
+      cursor:pointer;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{background:var(--purple);color:#fff;box-shadow:0 10px 28px rgba(109,66,216,.28)}
+    .btn-primary:hover{background:#5f36ca}
+    .btn-light{background:#fff;color:var(--purple);border-color:rgba(109,66,216,.2)}
+    .btn-light:hover{border-color:var(--purple)}
+    .btn-ghost{background:var(--lav);color:var(--purple)}
 
-    /* =========================
-       HERO
-    ========================== */
-
-    .hero {
-      min-height: 92vh;
+    .hero{
+      overflow:hidden;
       background:
-        linear-gradient(
-          rgba(37, 17, 67, 0.72),
-          rgba(29, 12, 53, 0.92)
-        ),
-        url("justice-run.jpg") center/cover no-repeat;
-
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 80px 20px;
-    }
-
-    .hero-content {
-      max-width: 950px;
-    }
-
-    .eyebrow {
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: 0.78rem;
-      font-weight: 800;
-      margin-bottom: 18px;
-      color: #d8b9f8;
-    }
-
-    .hero h1 {
-      font-size: clamp(3rem, 8vw, 7rem);
-      line-height: 0.95;
-      letter-spacing: -4px;
-      margin-bottom: 25px;
-    }
-
-    .hero h1 span {
-      color: #c99af4;
-    }
-
-    .hero-description {
-      font-size: clamp(1.05rem, 2vw, 1.35rem);
-      max-width: 720px;
-      margin: 0 auto 35px;
-      color: #f7f0ff;
-    }
-
-    .hero-details {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 38px;
-    }
-
-    .hero-details span {
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      background: rgba(255, 255, 255, 0.08);
-      padding: 10px 18px;
-      border-radius: 50px;
-      font-size: 0.9rem;
-    }
-
-    .btn {
-      display: inline-block;
-      background: #c99af4;
-      color: #26133e;
-      padding: 16px 30px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: 0.25s ease;
-    }
-
-    .btn:hover {
-      background: white;
-      transform: translateY(-3px);
-    }
-
-    /* =========================
-       GENERAL
-    ========================== */
-
-    section {
-      padding: 90px 20px;
-    }
-
-    .container {
-      max-width: 1150px;
-      margin: auto;
-    }
-
-    .section-tag {
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 0.75rem;
-      font-weight: 900;
-      color: #7440a8;
-      margin-bottom: 12px;
-    }
-
-    h2 {
-      font-size: clamp(2.2rem, 5vw, 4rem);
-      line-height: 1.05;
-      margin-bottom: 25px;
-      letter-spacing: -2px;
-      color: #2d1847;
-    }
-
-    .lead {
-      font-size: 1.15rem;
-      max-width: 780px;
-      color: #5d5365;
-    }
-
-    /* =========================
-       ABOUT
-    ========================== */
-
-    .about {
-      background: #faf8fc;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .about-card {
-      background: linear-gradient(145deg, #321750, #4d2471);
-      color: white;
-      border-radius: 28px;
-      padding: 45px;
-      box-shadow: 0 18px 50px rgba(57, 28, 88, 0.15);
-    }
-
-    .about-card h3 {
-      font-size: 2rem;
-      margin-bottom: 18px;
-    }
-
-    .about-card p {
-      color: #eee3f8;
-    }
-
-    /* =========================
-       EVENT OPTIONS
-    ========================== */
-
-    .event-types {
-      background: #f0e7f8;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-      margin-top: 45px;
-    }
-
-    .card {
-      background: white;
-      padding: 40px;
-      border-radius: 24px;
-      border: 1px solid #e8d9f4;
-      box-shadow: 0 12px 35px rgba(66, 31, 98, 0.06);
-      transition: 0.25s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 18px 45px rgba(66, 31, 98, 0.11);
-    }
-
-    .card-number {
-      font-size: 4rem;
-      font-weight: 900;
-      color: #7b42ac;
-      line-height: 1;
-      margin-bottom: 20px;
-    }
-
-    .card h3 {
-      font-size: 1.7rem;
-      margin-bottom: 12px;
-      color: #2d1847;
-    }
-
-    .card p {
-      color: #62576b;
-    }
-
-    /* =========================
-       FUNDRAISING
-    ========================== */
-
-    .fundraising {
-      background: linear-gradient(135deg, #2c1546, #4c216f);
-      color: white;
-    }
-
-    .fundraising h2 {
-      color: white;
-      max-width: 760px;
-    }
-
-    .fundraising .section-tag {
-      color: #dabaf7;
-    }
-
-    .goal-wrap {
-      margin-top: 50px;
-      max-width: 900px;
-    }
-
-    .goal-number {
-      font-size: clamp(4.5rem, 10vw, 8rem);
-      font-weight: 900;
-      color: #cda0f5;
-      letter-spacing: -5px;
-      line-height: 1;
-    }
-
-    .goal-label {
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-top: 12px;
-      color: #dacfea;
-    }
-
-    .progress-track {
-      width: 100%;
-      height: 14px;
-      background: #654582;
-      border-radius: 20px;
-      margin: 30px 0;
-      overflow: hidden;
-    }
-
-    .progress-fill {
-      width: 0%;
-      height: 100%;
-      background: linear-gradient(90deg, #a865dc, #ddb9ff);
-      border-radius: 20px;
-    }
-
-    .fundraising-copy {
-      max-width: 850px;
-      font-size: 1.1rem;
-      color: #ece1f5;
-    }
-
-    /* =========================
-       IMPACT
-    ========================== */
-
-    .impact {
-      background: #ffffff;
-    }
-
-    .impact-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-      margin-top: 45px;
-    }
-
-    .impact-item {
-      background: #faf7fc;
-      border-radius: 20px;
-      padding: 30px;
-      border-top: 4px solid #8150ae;
-    }
-
-    .impact-item h3 {
-      font-size: 1.35rem;
-      margin-bottom: 10px;
-      color: #3b2058;
-    }
-
-    .impact-item p {
-      color: #62586a;
-    }
-
-    /* =========================
-       PERSONS DAY
-    ========================== */
-
-    .persons-day {
-      background: linear-gradient(135deg, #eadcf6, #f6effb);
-    }
-
-    .persons-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
-      align-items: center;
-    }
-
-    .persons-quote {
-      font-size: clamp(2.2rem, 4vw, 3.6rem);
-      font-weight: 900;
-      line-height: 1.08;
-      color: #442363;
-    }
-
-    /* =========================
-       CELEBRATION
-    ========================== */
-
-    .celebration {
-      text-align: center;
-      background: #fff;
-    }
-
-    .celebration .lead {
-      margin: 0 auto;
-    }
-
-    .celebration-features {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-      margin-top: 40px;
-    }
-
-    .celebration-features span {
-      background: #f0e5f8;
-      color: #482661;
-      padding: 13px 20px;
-      border-radius: 40px;
-      font-weight: 800;
-    }
-
-    /* =========================
-       PRIZES
-    ========================== */
-
-    .prizes {
-      background: #20102f;
-      color: white;
-    }
-
-    .prizes h2 {
-      color: white;
-    }
-
-    .prizes .section-tag {
-      color: #d4acf7;
-    }
-
-    .prize-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin-top: 40px;
-    }
-
-    .prize {
-      padding: 32px;
-      border: 1px solid #5b3a70;
-      border-radius: 20px;
-      background: rgba(255,255,255,0.03);
-    }
-
-    .prize h3 {
-      color: #d6adf8;
-      margin-bottom: 10px;
-    }
-
-    .prize p {
-      color: #ddd1e4;
-    }
-
-    /* =========================
-       TEAMS
-    ========================== */
-
-    .teams {
-      text-align: center;
-      background: #f7f1fb;
-    }
-
-    .team-box {
-      max-width: 850px;
-      margin: 40px auto 0;
-      background: white;
-      border-radius: 25px;
-      padding: 45px;
-      box-shadow: 0 15px 45px rgba(70, 34, 97, 0.08);
-      border: 1px solid #eadcf4;
-    }
-
-    .team-box .lead {
-      margin: auto;
-    }
-
-    .team-box strong {
-      color: #7440a8;
-    }
-
-    /* =========================
-       FINAL CTA
-    ========================== */
-
-    .final-cta {
-      background: linear-gradient(135deg, #773ab5, #351650);
-      color: white;
-      text-align: center;
-      padding: 105px 20px;
-    }
-
-    .final-cta h2 {
-      color: white;
-      max-width: 800px;
-      margin: 0 auto 20px;
-    }
-
-    .final-cta .section-tag {
-      color: #e7cef9;
-    }
-
-    .final-cta p {
-      max-width: 680px;
-      margin: 0 auto 35px;
-      font-size: 1.1rem;
-      color: #f2e8f8;
-    }
-
-    .register-btn {
-      display: inline-block;
-      background: white;
-      color: #3b1c55;
-      padding: 20px 44px;
-      border-radius: 100px;
-      text-decoration: none;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      font-size: 1rem;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-      transition: 0.25s ease;
-    }
-
-    .register-btn:hover {
-      transform: translateY(-4px) scale(1.02);
-      background: #d9b6f7;
-    }
-
-    /* =========================
-       MOBILE
-    ========================== */
-
-    @media (max-width: 850px) {
-
-      .about-grid,
-      .persons-grid,
-      .cards,
-      .impact-grid,
-      .prize-grid {
-        grid-template-columns: 1fr;
+        radial-gradient(circle at 15% 20%, rgba(199,171,255,.38), transparent 27%),
+        radial-gradient(circle at 85% 12%, rgba(255,255,255,.18), transparent 25%),
+        linear-gradient(135deg,#4e348f 0%,#6d42d8 48%,#8a59ed 100%);
+      color:#fff;
+      padding:88px 0 72px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:60px;
+      align-items:center;
+    }
+    .eyebrow{
+      text-transform:uppercase;
+      letter-spacing:.22em;
+      font-size:12px;
+      font-weight:900;
+      opacity:.82;
+      margin-bottom:18px;
+    }
+    h1,h2,h3,p{margin-top:0}
+    h1{
+      font-size:clamp(54px,8vw,104px);
+      line-height:.91;
+      letter-spacing:-.065em;
+      margin-bottom:28px;
+      max-width:880px;
+    }
+    .hero h1 .accent{color:#d7b7ff}
+    .hero-copy{
+      font-size:clamp(17px,2vw,21px);
+      max-width:760px;
+      color:rgba(255,255,255,.88);
+      margin-bottom:28px;
+    }
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:30px}
+    .hero .btn-primary{background:#fff;color:#5d33c6;box-shadow:none}
+    .hero .btn-light{color:#fff;border-color:rgba(255,255,255,.38);background:rgba(255,255,255,.08)}
+    .hero-tags{display:flex;flex-wrap:wrap;gap:10px}
+    .pill{
+      padding:9px 14px;border-radius:999px;
+      border:1px solid rgba(255,255,255,.25);
+      background:rgba(255,255,255,.08);
+      font-size:13px;font-weight:700;
+    }
+
+    .hero-card{
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.24);
+      padding:26px;
+      border-radius:32px;
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(20px);
+    }
+    .hero-card-inner{
+      background:#fff;color:var(--ink);
+      border-radius:24px;padding:28px;
+    }
+    .stat{
+      display:flex;align-items:end;justify-content:space-between;gap:12px;
+      padding:16px 0;border-bottom:1px solid var(--line);
+    }
+    .stat:last-child{border-bottom:0}
+    .stat strong{font-size:25px;letter-spacing:-.03em}
+    .stat span{font-size:13px;color:var(--muted);font-weight:700}
+
+    section{padding:92px 0}
+    .section-head{
+      display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:38px;
+    }
+    .section-head h2{
+      font-size:clamp(38px,5vw,64px);
+      line-height:1.02;letter-spacing:-.05em;margin-bottom:0;
+    }
+    .section-head p{max-width:570px;color:var(--muted);margin-bottom:5px}
+
+    .how{background:linear-gradient(180deg,#fff,var(--lav-2))}
+    .how-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .how-card{
+      background:#fff;border:1px solid var(--line);
+      border-radius:var(--radius);padding:32px;
+      box-shadow:0 14px 40px rgba(55,34,105,.06);
+    }
+    .how-number{
+      width:44px;height:44px;border-radius:14px;
+      display:grid;place-items:center;
+      background:var(--lav);color:var(--purple);
+      font-weight:900;margin-bottom:20px;
+    }
+    .how-card h3{font-size:28px;letter-spacing:-.03em;margin-bottom:10px}
+    .steps{padding-left:18px;margin:16px 0 24px;color:#4d4e60}
+    .steps li{margin:10px 0}
+
+    .video-wrap{
+      margin-top:28px;
+      padding:22px;
+      background:linear-gradient(135deg,#ece2ff,#f8f4ff);
+      border-radius:32px;
+      border:1px solid rgba(109,66,216,.12);
+    }
+    .video-frame{
+      aspect-ratio:16/9;
+      width:100%;
+      border:0;
+      border-radius:22px;
+      background:linear-gradient(135deg,#2d2347,#7450c7);
+      display:grid;
+      place-items:center;
+      color:#fff;
+      overflow:hidden;
+    }
+    .video-placeholder{
+      text-align:center;padding:30px;max-width:650px;
+    }
+    .play{
+      width:76px;height:76px;border-radius:50%;
+      margin:0 auto 18px;
+      display:grid;place-items:center;
+      background:#fff;color:var(--purple);
+      font-size:28px;font-weight:900;
+    }
+
+    .movement{background:#fff}
+    .split{
+      display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:stretch;
+    }
+    .big-copy{
+      background:#fbf9ff;border:1px solid var(--line);
+      border-radius:var(--radius);padding:40px;
+    }
+    .big-copy h2{font-size:clamp(42px,5vw,70px);line-height:.98;letter-spacing:-.055em}
+    .feature-card{
+      background:linear-gradient(145deg,#5d3bb2,#7b52df);
+      color:white;border-radius:var(--radius);padding:40px;
+      display:flex;flex-direction:column;justify-content:center;
+    }
+    .feature-card h3{font-size:34px;line-height:1.04;letter-spacing:-.04em;margin-bottom:18px}
+    .feature-card p{color:rgba(255,255,255,.82);margin-bottom:0}
+
+    .challenge{background:var(--lav-2)}
+    .cards-2,.cards-3{display:grid;gap:20px}
+    .cards-2{grid-template-columns:1fr 1fr}
+    .cards-3{grid-template-columns:repeat(3,1fr)}
+    .challenge-card,.impact-card,.prize-card{
+      background:#fff;border:1px solid var(--line);border-radius:26px;padding:30px;
+    }
+    .challenge-card .distance{
+      font-size:58px;line-height:1;font-weight:950;color:var(--purple);letter-spacing:-.06em;
+      margin-bottom:18px;
+    }
+    .challenge-card h3{font-size:25px}
+
+    .goal{
+      background:linear-gradient(135deg,#4d2e9c,#6c39d7 50%,#8d5cf0);
+      color:#fff;
+    }
+    .goal-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:55px;align-items:center}
+    .goal h2{font-size:clamp(48px,6vw,78px);line-height:.98;letter-spacing:-.055em}
+    .goal-number{font-size:clamp(72px,11vw,140px);font-weight:950;line-height:.85;color:#d5baff;letter-spacing:-.07em}
+    .goal small{display:block;letter-spacing:.16em;text-transform:uppercase;font-weight:900;margin-top:14px}
+    .meter{height:14px;background:rgba(255,255,255,.22);border-radius:999px;overflow:hidden;margin:18px 0 8px}
+    .meter > span{display:block;height:100%;width:0%;background:#fff;border-radius:999px}
+    .goal p{color:rgba(255,255,255,.84)}
+
+    .impact{background:#fff}
+    .impact-card h3{font-size:22px;margin-bottom:8px}
+    .impact-icon{
+      width:46px;height:46px;border-radius:14px;background:var(--lav);
+      display:grid;place-items:center;color:var(--purple);font-weight:950;margin-bottom:18px;
+    }
+
+    .persons{
+      background:linear-gradient(180deg,#fff8fd,#faf7ff);
+    }
+    .persons-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:center}
+    .persons h2{font-size:clamp(42px,5vw,68px);line-height:1;letter-spacing:-.05em}
+    .quote{
+      font-size:clamp(32px,4vw,56px);font-weight:900;line-height:1.02;
+      letter-spacing:-.045em;color:#5943a0;
+    }
+
+    .celebration{background:#fff}
+    .tag-cloud{display:flex;gap:10px;flex-wrap:wrap;margin-top:25px}
+    .tag-cloud span{
+      background:var(--lav);color:#5c43a4;padding:10px 15px;border-radius:999px;font-weight:800;font-size:13px;
+    }
+
+    .prizes{background:#211c36;color:#fff}
+    .prizes .section-head p{color:rgba(255,255,255,.68)}
+    .prize-card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12)}
+    .prize-card h3{color:#c9adff}
+    .prize-card p{color:rgba(255,255,255,.68)}
+
+    .teams{background:var(--lav-2)}
+    .team-box{
+      background:#fff;border:1px solid var(--line);border-radius:30px;
+      padding:40px;display:flex;align-items:center;justify-content:space-between;gap:30px;
+    }
+    .team-box h2{font-size:clamp(40px,5vw,66px);letter-spacing:-.05em;line-height:1;margin-bottom:14px}
+    .team-box p{max-width:700px;color:var(--muted);margin-bottom:0}
+
+    .final-cta{
+      padding:100px 0;
+      text-align:center;color:#fff;
+      background:
+        radial-gradient(circle at 15% 30%, rgba(212,184,255,.34), transparent 28%),
+        linear-gradient(135deg,#4b2e91,#6d42d8 60%,#8f5ff2);
+    }
+    .final-cta h2{
+      font-size:clamp(48px,7vw,86px);line-height:.95;letter-spacing:-.06em;
+      max-width:900px;margin:0 auto 20px;
+    }
+    .final-cta p{max-width:720px;margin:0 auto 30px;color:rgba(255,255,255,.82);font-size:18px}
+    .final-cta .btn-primary{background:#fff;color:#5f36ca}
+    .final-cta .btn-light{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.3)}
+
+    footer{
+      padding:34px 0;
+      background:#171424;color:#b9b5c9;font-size:13px;
+    }
+    .footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .footer-links{display:flex;gap:18px;flex-wrap:wrap}
+
+    .mobile-bar{display:none}
+
+    @media (max-width: 900px){
+      .navlinks{display:none}
+      .hero-grid,.split,.goal-grid,.persons-grid{grid-template-columns:1fr}
+      .how-grid,.cards-2,.cards-3{grid-template-columns:1fr}
+      .hero{padding-top:64px}
+      .hero-card{max-width:620px}
+      .team-box{align-items:flex-start;flex-direction:column}
+      .section-head{align-items:flex-start;flex-direction:column}
+    }
+
+    @media (max-width: 640px){
+      .container{width:min(100% - 28px,1160px)}
+      .topbar .nav{min-height:68px}
+      .nav-actions .btn-light{display:none}
+      section{padding:70px 0}
+      .hero{padding:58px 0 60px}
+      h1{font-size:54px}
+      .hero-card{padding:14px;border-radius:24px}
+      .hero-card-inner{padding:20px}
+      .how-card,.big-copy,.feature-card,.challenge-card,.impact-card,.prize-card,.team-box{padding:24px}
+      .mobile-bar{
+        position:fixed;z-index:1100;left:12px;right:12px;bottom:12px;
+        display:grid;grid-template-columns:1fr 1fr;gap:9px;
+        padding:9px;border-radius:22px;background:rgba(255,255,255,.94);
+        box-shadow:0 18px 45px rgba(28,18,57,.24);backdrop-filter:blur(16px);
       }
-
-      section {
-        padding: 70px 20px;
-      }
-
-      .hero h1 {
-        letter-spacing: -2px;
-      }
-
-      .about-card,
-      .card,
-      .team-box {
-        padding: 30px;
-      }
+      body{padding-bottom:88px}
     }
   </style>
 </head>
-
 <body>
 
-  <!-- HERO -->
-  <header class="hero">
+  <!-- Replace #REGISTER_LINK and #DONATE_LINK with your live Zeffy URLs. -->
 
-    <div class="hero-content">
-
-      <p class="eyebrow">
-        Undergraduate Access to Justice Presents
-      </p>
-
-      <h1>
-        THE JUSTICE <span>RUN</span>
-      </h1>
-
-      <p class="hero-description">
-        Run for awareness. Walk for change. Move justice forward.
-        Join students, professionals, families and community members
-        for a day dedicated to access to justice, legal literacy and
-        meaningful community impact.
-      </p>
-
-      <div class="hero-details">
-        <span>October 17, 2026</span>
-        <span>5K Justice Run</span>
-        <span>1K Community Walk</span>
-        <span>University District</span>
-      </div>
-
-      <a href="#about" class="btn">
-        Discover The Justice Run
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#top">
+        <span class="brand-mark">A2J</span>
+        <span>Justice Run 2026</span>
       </a>
 
-    </div>
+      <nav class="navlinks" aria-label="Main navigation">
+        <a href="#register-guide">How to Register</a>
+        <a href="#about">About</a>
+        <a href="#impact">Impact</a>
+        <a href="#celebration">Celebration</a>
+        <a href="#teams">Teams</a>
+      </nav>
 
+      <div class="nav-actions">
+        <a class="btn btn-light" href="#DONATE_LINK">Donate</a>
+        <a class="btn btn-primary" href="#REGISTER_LINK">Register</a>
+      </div>
+    </div>
   </header>
 
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Undergraduate Access to Justice presents</div>
+          <h1>The Justice <span class="accent">Run.</span></h1>
+          <p class="hero-copy">
+            Run for awareness. Walk for change. Move justice forward. Join students,
+            professionals, families and community members for a day dedicated to access
+            to justice, legal literacy and meaningful community impact.
+          </p>
 
-  <!-- ABOUT -->
-  <section class="about" id="about">
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#REGISTER_LINK">Register now →</a>
+            <a class="btn btn-light" href="#DONATE_LINK">Donate to the campaign</a>
+            <a class="btn btn-light" href="#register-guide">How registration works</a>
+          </div>
 
-    <div class="container about-grid">
+          <div class="hero-tags">
+            <span class="pill">October 17, 2026</span>
+            <span class="pill">5K Justice Run</span>
+            <span class="pill">1K Community Walk</span>
+            <span class="pill">University District</span>
+          </div>
+        </div>
 
-      <div>
-
-        <p class="section-tag">
-          More Than A Race
-        </p>
-
-        <h2>
-          A movement for access to justice.
-        </h2>
-
-        <p class="lead">
-          The Justice Run brings Calgary together around one simple idea:
-          understanding your rights and accessing legal resources should
-          not be out of reach.
-        </p>
-
-        <br>
-
-        <p class="lead">
-          Students, families, professionals, runners, walkers and community
-          members are invited to move together while raising awareness and
-          funds for initiatives connected to access to justice and legal literacy.
-        </p>
-
+        <div class="hero-card">
+          <div class="hero-card-inner">
+            <div class="eyebrow" style="color:#6d42d8;opacity:1">Event at a glance</div>
+            <div class="stat">
+              <div><strong>5K</strong><br><span>Justice Run</span></div>
+              <span>Run • Fundraise • Compete</span>
+            </div>
+            <div class="stat">
+              <div><strong>1K</strong><br><span>Community Walk</span></div>
+              <span>All ages • Families welcome</span>
+            </div>
+            <div class="stat">
+              <div><strong>$50K</strong><br><span>Fundraising goal</span></div>
+              <span>Move justice forward</span>
+            </div>
+            <div class="stat">
+              <div><strong>Oct 17</strong><br><span>Calgary, Alberta</span></div>
+              <span>Persons Day weekend</span>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
 
+    <section class="how" id="register-guide">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow" style="color:#6d42d8;opacity:1">Start here</div>
+            <h2>How to register.</h2>
+          </div>
+          <p>
+            Choose the option that matches how you want to participate. You can register
+            individually, register a team, or join a team after receiving the team information
+            from your captain.
+          </p>
+        </div>
 
-      <div class="about-card">
+        <div class="how-grid">
+          <article class="how-card">
+            <div class="how-number">01</div>
+            <h3>Register individually</h3>
+            <p>Best for participants registering and fundraising on their own.</p>
+            <ol class="steps">
+              <li>Click <strong>Register</strong> and choose your ticket category.</li>
+              <li>Complete your participant information and required acknowledgements.</li>
+              <li>Create or join your fundraising campaign when prompted.</li>
+              <li>Watch your email for race-package, waiver and event-day instructions.</li>
+            </ol>
+            <a class="btn btn-primary" href="#REGISTER_LINK">Individual registration →</a>
+          </article>
 
-        <h3>
-          Run. Walk. Fundraise. Celebrate.
-        </h3>
+          <article class="how-card">
+            <div class="how-number">02</div>
+            <h3>Register as a team</h3>
+            <p>Best for friends, classmates, coworkers, families or organizations participating together.</p>
+            <ol class="steps">
+              <li>One <strong>Team Captain</strong> completes the team registration.</li>
+              <li>The captain provides the requested information for each team member.</li>
+              <li>Team members receive instructions to join the campaign and complete any required forms.</li>
+              <li>Use the exact same team name so fundraising and prize tracking stay together.</li>
+            </ol>
+            <a class="btn btn-primary" href="#REGISTER_LINK">Team registration →</a>
+          </article>
+        </div>
 
+        <div class="video-wrap">
+          <div class="video-frame">
+            <!--
+              TO EMBED YOUR VIDEO:
+              Replace this entire .video-placeholder div with:
+              <iframe
+                width="100%" height="100%"
+                src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+                title="How to register for the Justice Run"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+              </iframe>
+            -->
+            <div class="video-placeholder">
+              <div class="play">▶</div>
+              <h3 style="font-size:30px;margin-bottom:10px">Registration video goes here</h3>
+              <p style="color:rgba(255,255,255,.76);margin-bottom:0">
+                Embed a short 60–90 second video explaining individual registration,
+                team registration, fundraising pages, waivers and what happens after checkout.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="movement" id="about">
+      <div class="container split">
+        <div class="big-copy">
+          <div class="eyebrow" style="color:#6d42d8;opacity:1">More than a race</div>
+          <h2>A movement for access to justice.</h2>
+          <p>
+            The Justice Run brings Calgary together around one simple idea:
+            understanding your rights and accessing legal resources should not be out of reach.
+          </p>
+          <p>
+            Students, families, professionals, runners, walkers and community members are invited
+            to move together while raising awareness and funds for initiatives connected to access
+            to justice and legal literacy.
+          </p>
+        </div>
+
+        <aside class="feature-card">
+          <div class="eyebrow">Run. Walk. Fundraise. Celebrate.</div>
+          <h3>One event. Multiple ways to make an impact.</h3>
+          <p>
+            Participate in the 5K Justice Run or 1K Community Walk, fundraise individually
+            or as a team, then join us at University District for a community celebration
+            featuring speakers, prizes, partner activations and more.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="challenge">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow" style="color:#6d42d8;opacity:1">Choose your challenge</div>
+            <h2>There is a place for everyone.</h2>
+          </div>
+          <p>Run competitively, walk with your family, support a friend, or show up for the cause.</p>
+        </div>
+
+        <div class="cards-2">
+          <article class="challenge-card">
+            <div class="distance">5K</div>
+            <h3>The Justice Run</h3>
+            <p>Challenge yourself alongside students, professionals, organizations, friends and community members while running for a cause that affects us all.</p>
+            <a class="btn btn-ghost" href="#REGISTER_LINK">Register for the 5K</a>
+          </article>
+          <article class="challenge-card">
+            <div class="distance">1K</div>
+            <h3>Community Walk</h3>
+            <p>A welcoming community experience for families, children, students, seniors and supporters who want to participate without completing the full 5K.</p>
+            <a class="btn btn-ghost" href="#REGISTER_LINK">Register for the 1K</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="goal">
+      <div class="container goal-grid">
+        <div>
+          <div class="eyebrow">Our 2026 goal</div>
+          <h2>Calgary, can we raise $50,000 for access to justice?</h2>
+          <p>
+            Every registration, donation, team and fundraising page helps move the campaign closer
+            to its goal.
+          </p>
+          <a class="btn btn-primary" href="#DONATE_LINK">Donate now →</a>
+        </div>
+        <div>
+          <div class="goal-number">$50K</div>
+          <small>Justice Run fundraising goal</small>
+          <div class="meter" aria-label="Fundraising progress"><span></span></div>
+          <p>
+            Participants can fundraise individually or join together in teams, turning every
+            kilometre into an opportunity to create meaningful community impact.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="impact" id="impact">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow" style="color:#6d42d8;opacity:1">Why it matters</div>
+            <h2>Legal knowledge can change someone’s life.</h2>
+          </div>
+          <p>
+            The Justice Run is designed to build awareness, strengthen community connections
+            and help expand legal literacy.
+          </p>
+        </div>
+
+        <div class="cards-3">
+          <article class="impact-card">
+            <div class="impact-icon">01</div>
+            <h3>Legal literacy</h3>
+            <p>Helping community members better understand legal rights, responsibilities and available resources.</p>
+          </article>
+          <article class="impact-card">
+            <div class="impact-icon">02</div>
+            <h3>Stronger communities</h3>
+            <p>Bringing students, professionals, organizations and community members together around one shared mission.</p>
+          </article>
+          <article class="impact-card">
+            <div class="impact-icon">03</div>
+            <h3>Meaningful impact</h3>
+            <p>Turning participation, fundraising and community support into practical opportunities to move justice forward.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="persons">
+      <div class="container persons-grid">
+        <div>
+          <div class="eyebrow" style="color:#6d42d8;opacity:1">In recognition of Persons Day</div>
+          <h2>Honouring those who challenged the limits of the law.</h2>
+          <p>
+            The Justice Run takes place during the week of Persons Day, recognizing the historic
+            Persons Case and the Famous Five, whose advocacy helped advance women's legal recognition
+            in Canada.
+          </p>
+          <p>
+            Their work reminds us that legal change begins when people challenge barriers,
+            understand their rights and push institutions toward greater equality and justice.
+          </p>
+        </div>
+        <div class="quote">
+          Run for awareness.<br>
+          Walk for change.<br>
+          Move justice forward.
+        </div>
+      </div>
+    </section>
+
+    <section class="celebration" id="celebration">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow" style="color:#6d42d8;opacity:1">After the finish line</div>
+            <h2>Finish the run. Join the celebration.</h2>
+          </div>
+          <p>
+            After the 5K and 1K, participants, families and supporters will come together at
+            University District for a community celebration built around connection, impact
+            and recognition.
+          </p>
+        </div>
+        <div class="tag-cloud">
+          <span>Guest Speakers</span>
+          <span>Community Booths</span>
+          <span>Prizes</span>
+          <span>Partner Activations</span>
+          <span>Family Activities</span>
+          <span>Legal Literacy</span>
+          <span>Photo Opportunities</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="prizes">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow" style="color:#c9adff;opacity:1">Compete. Fundraise. Win.</div>
+            <h2>It’s not only about who crosses first.</h2>
+          </div>
+          <p>Fundraising, teamwork and community spirit matter too.</p>
+        </div>
+        <div class="cards-3">
+          <article class="prize-card">
+            <h3>Top Fundraiser</h3>
+            <p>Raise the most for access to justice and compete for exclusive prizes and recognition.</p>
+          </article>
+          <article class="prize-card">
+            <h3>Fastest 5K</h3>
+            <p>Race for the finish and compete for recognition as one of the Justice Run’s fastest participants.</p>
+          </article>
+          <article class="prize-card">
+            <h3>Top Team</h3>
+            <p>Bring together friends, classmates, coworkers, family or your organization and compete as a team.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="teams" id="teams">
+      <div class="container">
+        <div class="team-box">
+          <div>
+            <div class="eyebrow" style="color:#6d42d8;opacity:1">Better together</div>
+            <h2>Build your Justice Run team.</h2>
+            <p>
+              Create a fundraising team of up to 5 participants. Bring your friends, classmates,
+              coworkers or family together, set a fundraising goal and see how much impact your team can create.
+            </p>
+          </div>
+          <a class="btn btn-primary" href="#REGISTER_LINK">Register a team →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="container">
+        <div class="eyebrow">October 17, 2026</div>
+        <h2>Calgary, are you ready to move justice forward?</h2>
         <p>
-          Participate in the 5K Justice Run or the 1K Community Walk,
-          fundraise individually or as a team, and then join us at
-          University District for a community celebration featuring
-          speakers, prizes, partner activations and more.
+          Run the 5K. Walk the 1K. Build a team. Fundraise. Donate. Bring your friends,
+          family and community and become part of the inaugural Justice Run.
         </p>
-
+        <div class="hero-actions" style="justify-content:center;margin-bottom:0">
+          <a class="btn btn-primary" href="#REGISTER_LINK">Register now →</a>
+          <a class="btn btn-light" href="#DONATE_LINK">Donate →</a>
+        </div>
       </div>
+    </section>
+  </main>
 
-    </div>
-
-  </section>
-
-
-  <!-- DISTANCES -->
-  <section class="event-types">
-
-    <div class="container">
-
-      <p class="section-tag">
-        Choose Your Challenge
-      </p>
-
-      <h2>
-        There is a place for everyone.
-      </h2>
-
-      <div class="cards">
-
-        <div class="card">
-
-          <div class="card-number">
-            5K
-          </div>
-
-          <h3>
-            The Justice Run
-          </h3>
-
-          <p>
-            Challenge yourself alongside students, professionals,
-            organizations, friends and community members while
-            running for a cause that affects us all.
-          </p>
-
-        </div>
-
-
-        <div class="card">
-
-          <div class="card-number">
-            1K
-          </div>
-
-          <h3>
-            Community Walk
-          </h3>
-
-          <p>
-            A welcoming community experience for families, children,
-            elders, students and supporters who want to participate
-            without completing the full 5K.
-          </p>
-
-        </div>
-
+  <footer>
+    <div class="container footer-row">
+      <div>© 2026 Undergraduate Access to Justice. The Justice Run.</div>
+      <div class="footer-links">
+        <a href="#register-guide">Registration</a>
+        <a href="#impact">Impact</a>
+        <a href="#celebration">Celebration</a>
+        <a href="#DONATE_LINK">Donate</a>
       </div>
-
     </div>
-
-  </section>
-
-
-  <!-- FUNDRAISING -->
-  <section class="fundraising">
-
-    <div class="container">
-
-      <p class="section-tag">
-        Our 2026 Goal
-      </p>
-
-      <h2>
-        Calgary, can we raise $50,000 for access to justice?
-      </h2>
-
-      <div class="goal-wrap">
-
-        <div class="goal-number">
-          $50K
-        </div>
-
-        <div class="goal-label">
-          Justice Run Fundraising Goal
-        </div>
-
-        <div class="progress-track">
-          <div class="progress-fill"></div>
-        </div>
-
-        <p class="fundraising-copy">
-          Our goal is to raise $50,000 through the Justice Run and
-          mobilize our community around greater access to justice.
-        </p>
-
-        <br>
-
-        <p class="fundraising-copy">
-          Participants will have the opportunity to fundraise individually
-          or join together in teams, turning every kilometre into an
-          opportunity to create meaningful community impact.
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- WHY IT MATTERS -->
-  <section class="impact">
-
-    <div class="container">
-
-      <p class="section-tag">
-        Why We Run
-      </p>
-
-      <h2>
-        Legal knowledge can change someone's life.
-      </h2>
-
-      <p class="lead">
-        The law touches almost every part of our lives — employment,
-        housing, education, family, personal safety, business and more.
-        Yet navigating the legal system can be confusing and inaccessible.
-      </p>
-
-
-      <div class="impact-grid">
-
-        <div class="impact-item">
-
-          <h3>
-            Legal Literacy
-          </h3>
-
-          <p>
-            Increasing awareness of legal rights,
-            responsibilities and available resources.
-          </p>
-
-        </div>
-
-
-        <div class="impact-item">
-
-          <h3>
-            Stronger Communities
-          </h3>
-
-          <p>
-            Creating connections between students,
-            professionals, organizations and the public.
-          </p>
-
-        </div>
-
-
-        <div class="impact-item">
-
-          <h3>
-            Meaningful Impact
-          </h3>
-
-          <p>
-            Raising funds and awareness for initiatives
-            that help move access to justice forward.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- PERSONS DAY -->
-  <section class="persons-day">
-
-    <div class="container persons-grid">
-
-      <div>
-
-        <p class="section-tag">
-          In Recognition of Persons Day
-        </p>
-
-        <h2>
-          Honouring those who challenged the limits of the law.
-        </h2>
-
-        <p class="lead">
-          The Justice Run takes place during the week of Persons Day,
-          commemorating the historic Persons Case and the Famous Five,
-          whose advocacy helped advance women's legal recognition in Canada.
-        </p>
-
-        <br>
-
-        <p class="lead">
-          Their work reminds us that legal change begins when people
-          challenge barriers, understand their rights and push institutions
-          toward greater equality and justice.
-        </p>
-
-      </div>
-
-
-      <div class="persons-quote">
-
-        Run for awareness.<br>
-        Walk for change.<br>
-        Move justice forward.
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- CELEBRATION -->
-  <section class="celebration">
-
-    <div class="container">
-
-      <p class="section-tag">
-        After The Finish Line
-      </p>
-
-      <h2>
-        Finish the run. Join the celebration.
-      </h2>
-
-      <p class="lead">
-        After the 5K and 1K, participants, families and supporters
-        will come together at University District for a community
-        celebration built around connection, impact and recognition.
-      </p>
-
-
-      <div class="celebration-features">
-
-        <span>Guest Speakers</span>
-        <span>Community Booths</span>
-        <span>Prizes</span>
-        <span>Partner Activations</span>
-        <span>Family Activities</span>
-        <span>Legal Literacy</span>
-        <span>Photo Opportunities</span>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- PRIZES -->
-  <section class="prizes">
-
-    <div class="container">
-
-      <p class="section-tag">
-        Compete. Fundraise. Win.
-      </p>
-
-      <h2>
-        It's not only about who crosses first.
-      </h2>
-
-
-      <div class="prize-grid">
-
-        <div class="prize">
-
-          <h3>
-            Top Fundraiser
-          </h3>
-
-          <p>
-            Raise the most for access to justice and compete
-            for exclusive prizes and recognition.
-          </p>
-
-        </div>
-
-
-        <div class="prize">
-
-          <h3>
-            Fastest 5K
-          </h3>
-
-          <p>
-            Race for the finish and compete for recognition
-            as one of the Justice Run's fastest participants.
-          </p>
-
-        </div>
-
-
-        <div class="prize">
-
-          <h3>
-            Top Team
-          </h3>
-
-          <p>
-            Bring together your friends, classmates,
-            coworkers or organization and compete as a team.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- TEAMS -->
-  <section class="teams">
-
-    <div class="container">
-
-      <p class="section-tag">
-        Better Together
-      </p>
-
-      <h2>
-        Build your Justice Run team.
-      </h2>
-
-
-      <div class="team-box">
-
-        <p class="lead">
-          Create a fundraising team of up to
-          <strong>6 participants</strong>.
-          Bring your friends, classmates, coworkers or family together,
-          set a fundraising goal and see how much impact your team can create.
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- REGISTER -->
-  <section class="final-cta">
-
-    <div class="container">
-
-      <p class="section-tag">
-        October 17, 2026
-      </p>
-
-      <h2>
-        Calgary, are you ready to move justice forward?
-      </h2>
-
-      <p>
-        Run the 5K. Walk the 1K. Build a team. Fundraise.
-        Bring your friends, family and community and become
-        part of the inaugural Justice Run.
-      </p>
-
-      <a
-        href="https://docs.google.com/forms/d/e/1FAIpQLSem3fNHrDtJhfIBBEMmavp5UbYpIdraDNdGM22eiGu-Vjhusw/viewform"
-        target="_blank"
-        class="register-btn"
-      >
-        Register Now →
-      </a>
-
-    </div>
-
-  </section>
+  </footer>
+
+  <div class="mobile-bar" aria-label="Quick actions">
+    <a class="btn btn-light" href="#DONATE_LINK">Donate</a>
+    <a class="btn btn-primary" href="#REGISTER_LINK">Register</a>
+  </div>
 
 </body>
 </html>

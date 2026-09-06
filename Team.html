@@ -1,221 +1,923 @@
-<div class="site">
-  <link rel="stylesheet" href="./style.css" />
-  <header class="nav">
-    <div class="brand">
-      <img src="https://i.imgur.com/vK4ACoR.jpg" />
-      <div>
-        <h3>Access 2 Justice</h3>
-        <p>UNIVERSITY OF CALGARY</p>
-      </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Executive Council | Access 2 Justice</title>
+
+    <style>
+
+        /* ==============================
+           GLOBAL
+        ============================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f7f5f1;
+            color: #252525;
+            line-height: 1.6;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+        }
+
+        .container {
+            width: min(1180px, 90%);
+            margin: auto;
+        }
+
+
+        /* ==============================
+           HERO
+        ============================== */
+
+        .team-hero {
+            padding: 110px 0 65px;
+        }
+
+        .eyebrow {
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 12px;
+            font-weight: 700;
+            color: #777;
+            margin-bottom: 16px;
+        }
+
+        .team-hero h1 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(48px, 7vw, 88px);
+            font-weight: 400;
+            line-height: 0.98;
+            max-width: 900px;
+            letter-spacing: -2px;
+        }
+
+        .hero-description {
+            margin-top: 28px;
+            max-width: 720px;
+            color: #666;
+            font-size: 17px;
+        }
+
+
+        /* ==============================
+           PRESIDENT FEATURE
+        ============================== */
+
+        .president-feature {
+            padding: 30px 0 100px;
+        }
+
+        .president-card {
+            display: grid;
+            grid-template-columns: 1fr 1.15fr;
+            background: #ebe7df;
+            border-radius: 28px;
+            overflow: hidden;
+            min-height: 560px;
+        }
+
+        .president-image {
+            height: 100%;
+            min-height: 560px;
+        }
+
+        .president-image img {
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .president-content {
+            padding: 70px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .position-label {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 11px;
+            font-weight: bold;
+            color: #777;
+            margin-bottom: 20px;
+        }
+
+        .president-content h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(42px, 5vw, 66px);
+            font-weight: 400;
+            line-height: 1.05;
+        }
+
+        .president-content p {
+            margin-top: 22px;
+            color: #666;
+            max-width: 470px;
+            font-size: 16px;
+        }
+
+
+        /* ==============================
+           SECTIONS
+        ============================== */
+
+        .team-section {
+            padding: 20px 0 100px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 30px;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #d8d4cd;
+        }
+
+        .section-header h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(34px, 4vw, 52px);
+            font-weight: 400;
+        }
+
+        .section-number {
+            color: #999;
+            font-size: 13px;
+            letter-spacing: 2px;
+        }
+
+
+        /* ==============================
+           TEAM GRID
+        ============================== */
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .team-card {
+            background: #fff;
+            padding: 12px;
+            border-radius: 18px;
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 45px rgba(0,0,0,0.08);
+        }
+
+        .team-photo {
+            aspect-ratio: 4 / 5;
+            overflow: hidden;
+            border-radius: 12px;
+            background: #dedbd5;
+        }
+
+        .team-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.45s ease;
+        }
+
+        .team-card:hover .team-photo img {
+            transform: scale(1.035);
+        }
+
+        .team-info {
+            padding: 20px 8px 14px;
+        }
+
+        .team-info h3 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 3px;
+        }
+
+        .team-role {
+            color: #777;
+            font-size: 13px;
+        }
+
+
+        /* ==============================
+           GROUP PHOTO
+        ============================== */
+
+        .group-section {
+            padding: 30px 0 110px;
+        }
+
+        .group-title {
+            margin-bottom: 38px;
+        }
+
+        .group-title h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(42px, 5vw, 66px);
+            font-weight: 400;
+        }
+
+        .group-title p {
+            max-width: 650px;
+            margin-top: 15px;
+            color: #666;
+        }
+
+        .main-group-photo {
+            border-radius: 24px;
+            overflow: hidden;
+            aspect-ratio: 16 / 8.5;
+            background: #dedbd5;
+        }
+
+        .main-group-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        /* ==============================
+           CANDID GALLERY
+        ============================== */
+
+        .gallery {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr 1fr;
+            gap: 18px;
+            margin-top: 18px;
+        }
+
+        .gallery-item {
+            border-radius: 18px;
+            overflow: hidden;
+            min-height: 280px;
+            background: #ddd;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        /* ==============================
+           CLOSING
+        ============================== */
+
+        .closing-section {
+            padding: 80px 0 130px;
+            text-align: center;
+        }
+
+        .closing-section p {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #777;
+            margin-bottom: 18px;
+        }
+
+        .closing-section h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(42px, 6vw, 74px);
+            font-weight: 400;
+            max-width: 900px;
+            margin: auto;
+            line-height: 1.08;
+        }
+
+
+        /* ==============================
+           RESPONSIVE
+        ============================== */
+
+        @media (max-width: 950px) {
+
+            .president-card {
+                grid-template-columns: 1fr;
+            }
+
+            .president-image {
+                min-height: 520px;
+            }
+
+            .president-content {
+                padding: 45px;
+            }
+
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .gallery-item:first-child {
+                grid-column: span 2;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            .team-hero {
+                padding-top: 70px;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .president-image {
+                min-height: 420px;
+            }
+
+            .president-content {
+                padding: 35px 28px;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-item:first-child {
+                grid-column: auto;
+            }
+
+            .section-header {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .main-group-photo {
+                aspect-ratio: 4 / 3;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<section class="team-hero">
+
+    <div class="container">
+
+        <div class="eyebrow">The Team</div>
+
+        <h1>
+            Meet the people moving justice forward.
+        </h1>
+
+        <p class="hero-description">
+            Access 2 Justice is powered by undergraduate students committed to
+            expanding legal literacy, strengthening community connections, and
+            making conversations about justice more accessible.
+        </p>
+
     </div>
 
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="About.html">About</a>
-      <a href="Team.html">Team</a>
-      <a href="Events.html">Events</a>
-      <a href="Sponsorship.html">Sponsorship</a>
-      
-    </nav>
+</section>
 
-    <a class="join" href="Join.html">Join Us</a>
-  </header>
-<section class="team" id="team">
-    <div class="team-header">
-      <p class="section-tag">THE TEAM</p>
-      <h2>Meet the executive council.</h2>
-      <p>
-        The students building Access 2 Justice through leadership, outreach,
-        advocacy, and community partnerships.
-      </p>
+
+
+<!-- =========================================
+     PRESIDENT
+========================================= -->
+
+<section class="president-feature">
+
+    <div class="container">
+
+        <div class="president-card">
+
+            <div class="president-image">
+                <img src="images/team/zahraa-virk.jpg"
+                     alt="Zahraa Virk">
+            </div>
+
+            <div class="president-content">
+
+                <div class="position-label">
+                    President & Founder
+                </div>
+
+                <h2>Zahraa Virk</h2>
+
+                <p>
+                    Leading Access 2 Justice's mission to advance legal literacy,
+                    strengthen community partnerships, and create meaningful
+                    opportunities for undergraduate students to engage with
+                    issues surrounding access to justice.
+                </p>
+
+            </div>
+
+        </div>
+
     </div>
 
-    <div class="team-grid">
-      <div class="team-card">
-        <img
-         src="https://i.imgur.com/Gm6dHTS.png" 
-         alt="Zahraa Virk"
-         class="team-photo"
-      />
-       <h3>Zahraa Virk</h3>
-       <p>President</p>
-      </div>
+</section>
 
-      <div class="team-card">
-        <img
-          src="https://i.imgur.com/OxwIcEI.jpeg"
-          alt="Hadjia Ba"
-          class="team-photo"
-        />
-        <h3>Hadjia Ba</h3>
-        <p>VP Internal</p>
-      </div>
 
-      <div class="team-card">
-        <img 
-          src="https://i.imgur.com/fALFLjf.png"
-          alt="Armana Abebe"
-          class="team-photo"
-          />
-        <h3>Armana Abebe</h3>
-        <p>VP Internal</p>
-      </div>
 
-      <div class="team-card">
-        <img 
-          src="https://i.imgur.com/FFm8kTs.jpeg"
-          alt="Stione Mesfin"
-          class="team-photo"
-          /> 
-        <h3>Stione Mesfin</h3>
-        <p>VP External</p>
-      </div>
+<!-- =========================================
+     EXECUTIVE LEADERSHIP
+========================================= -->
 
-      <div class="team-card">
-        <img 
-          src="https://i.imgur.com/yhE74Xf.jpeg"
-          alt="Ilana Merwe"
-          class="team-photo"
-          />
-        <h3>Ilana van der Merwe</h3>
-        <p>Secretary</p>
-      </div>
+<section class="team-section">
 
-      <div class="team-card">
-        <img 
-          src="https://i.imgur.com/XJw3E0H.png"
-          alt="Mikaeel Malik"
-          class="team-photo"
-        />
-        <h3>Mikaeel Malik</h3>
-        <p>Treasurer</p>
-      </div>
+    <div class="container">
 
-      <div class="team-card">
-        <img
-          src="https://i.imgur.com/IqjhGN4.jpeg"
-          alt="Autumn Berry-Smith"
-          class="team-photo"
-        />
-        <h3>Autumn Berry-Smith</h3>
-        <p>Events</p>
-      </div>
+        <div class="section-header">
+            <h2>Executive Leadership</h2>
+            <div class="section-number">01</div>
+        </div>
 
-      <div class="team-card">
-        <img
-          src="https://i.imgur.com/iBXibCh.jpeg"
-          alt="Jana Abou-Hashish"
-          class="team-photo"
-        />
-        <h3>Jana Abou-Hashish</h3>
-        <p>Events</p>
-      </div>
 
-      <div class="team-card">
-        <div class="team-photo"></div>
-        <h3>Samra Ahmad</h3>
-        <p>Events</p>
-      </div>
+        <div class="team-grid">
 
-      <div class="team-card">
-        <img 
-          src="https://i.imgur.com/epvHdmE.jpeg"
-          alt="Precious Idemdia"
-          class="team-photo"
-        />
-        <h3>Precious Idemudia</h3>
-        <p>Marketing</p>
-      </div>
 
-      <div class="team-card">
-        <img 
-          src="https://i.imgur.com/cg1iko3.jpeg"
-          alt="Angelie Lopez"
-          class="team-photo"
-          />
-        <h3>Angelie Lopez</h3>
-        <p>Marketing</p>
-      </div>
+            <article class="team-card">
 
-      <div class="team-card">
-        <img 
-          src="https://i.imgur.com/v5wu3D2.jpeg"
-          alt="Salem Ferrow"
-          class="team-photo"
-        />
-        <h3>Salem Ferrow</h3>
-        <p>Outreach</p>
-      </div>
+                <div class="team-photo">
+                    <img src="images/team/stione-mesfin.jpg"
+                         alt="Stione Mesfin">
+                </div>
 
-      <div class="team-card">
-        <img 
-          src="https://i.imgur.com/tbNBQ0Y.jpeg"
-          alt="Salem Ferrow"
-          class="team-photo"
-          />
-        <h3>Torie Rogers</h3>
-        <p>Outreach</p>
-      </div>
+                <div class="team-info">
+                    <h3>Stione Mesfin</h3>
+                    <div class="team-role">
+                        Vice President External
+                    </div>
+                </div>
 
-      <div class="team-card">
-        <img 
-          src="https://i.imgur.com/BgCnjgd.jpeg"
-          alt="Kiarah Loree"
-          class="team-photo"
-        />
-        <h3>Kiarah Loree</h3>
-        <p>Community Partnership Coordinator</p>
-      </div>
+            </article>
 
-      <div class="team-card">
-        <img
-          src="https://i.imgur.com/cWtmk6j.jpeg"
-          alt="Vaanika Sharma"
-          class="team-photo"
-        />
-        <h3>Vaanika Sharma</h3>
-        <p>Academic</p>
-      </div>
 
-      <div class="team-card">
-        <div class="team-photo"></div>
-        <h3>Taran Grewal</h3>
-        <p>Academic</p>
-      </div>
-    </div>
-  </section>
-<footer class="site-footer">
-  <div class="footer-grid">
 
-    <div class="footer-about">
-      <h3>A2J</h3>
-      <p>
-        An undergraduate club dedicated to improving access to justice.
-      </p>
+            <article class="team-card">
+
+                <div class="team-photo">
+                    <img src="images/team/ilana-van-der-merwe.jpg"
+                         alt="Ilana van der Merwe">
+                </div>
+
+                <div class="team-info">
+                    <h3>Ilana van der Merwe</h3>
+                    <div class="team-role">
+                        Secretary
+                    </div>
+                </div>
+
+            </article>
+
+
+
+            <article class="team-card">
+
+                <div class="team-photo">
+                    <img src="images/team/mikaeel-malik.jpg"
+                         alt="Mikaeel Malik">
+                </div>
+
+                <div class="team-info">
+                    <h3>Mikaeel Malik</h3>
+                    <div class="team-role">
+                        Treasurer
+                    </div>
+                </div>
+
+            </article>
+
+
+
+            <article class="team-card">
+
+                <div class="team-photo">
+                    <img src="images/team/jake-nixon.jpg"
+                         alt="Jake Nixon">
+                </div>
+
+                <div class="team-info">
+                    <h3>Jake Nixon</h3>
+                    <div class="team-role">
+                        Treasurer
+                    </div>
+                </div>
+
+            </article>
+
+
+        </div>
+
     </div>
 
-    <div class="footer-links">
-      <h3>Explore</h3>
-      <a href="About.html">About</a>
-      <a href="Team.html">Team</a>
-      <a href="Events.html">Events</a>
-      <a href="Join.html">Contact</a>
+</section>
+
+
+
+<!-- =========================================
+     EVENTS
+========================================= -->
+
+<section class="team-section">
+
+    <div class="container">
+
+        <div class="section-header">
+            <h2>Events</h2>
+            <div class="section-number">02</div>
+        </div>
+
+
+        <div class="team-grid">
+
+
+            <article class="team-card">
+                <div class="team-photo">
+                    <img src="images/team/jana-abou-hashish.jpg"
+                         alt="Jana Abou-Hashish">
+                </div>
+
+                <div class="team-info">
+                    <h3>Jana Abou-Hashish</h3>
+                    <div class="team-role">Events</div>
+                </div>
+            </article>
+
+
+            <article class="team-card">
+                <div class="team-photo">
+                    <img src="images/team/samra-ahmad.jpg"
+                         alt="Samra Ahmad">
+                </div>
+
+                <div class="team-info">
+                    <h3>Samra Ahmad</h3>
+                    <div class="team-role">Events</div>
+                </div>
+            </article>
+
+
+            <article class="team-card">
+                <div class="team-photo">
+                    <img src="images/team/luksh-tanvar.jpg"
+                         alt="Luksh Tanvar">
+                </div>
+
+                <div class="team-info">
+                    <h3>Luksh Tanvar</h3>
+                    <div class="team-role">Events</div>
+                </div>
+            </article>
+
+
+            <article class="team-card">
+                <div class="team-photo">
+                    <img src="images/team/mesgana-teshome.jpg"
+                         alt="Mesgana Teshome">
+                </div>
+
+                <div class="team-info">
+                    <h3>Mesgana Teshome</h3>
+                    <div class="team-role">Events</div>
+                </div>
+            </article>
+
+
+        </div>
+
     </div>
 
-    <div class="footer-connect">
-      <h3>Connect</h3>
-      <p>University of Calgary</p>
-      <a href="mailto:access2justice.uofc@gmail.com">
-        access2justice.uofc@gmail.com
-      </a>
-      <a href="https://instagram.com/access2justice_uofc">
-        @access2justice_uofc
-      </a>
+</section>
+
+
+
+<!-- =========================================
+     MARKETING
+========================================= -->
+
+<section class="team-section">
+
+    <div class="container">
+
+        <div class="section-header">
+            <h2>Marketing</h2>
+            <div class="section-number">03</div>
+        </div>
+
+
+        <div class="team-grid">
+
+
+            <article class="team-card">
+                <div class="team-photo">
+                    <img src="images/team/precious-idemudia.jpg"
+                         alt="Precious Idemudia">
+                </div>
+
+                <div class="team-info">
+                    <h3>Precious Idemudia</h3>
+                    <div class="team-role">Marketing</div>
+                </div>
+            </article>
+
+
+            <article class="team-card">
+                <div class="team-photo">
+                    <img src="images/team/promise-idemudia.jpg"
+                         alt="Promise Idemudia">
+                </div>
+
+                <div class="team-info">
+                    <h3>Promise Idemudia</h3>
+                    <div class="team-role">Marketing</div>
+                </div>
+            </article>
+
+
+            <article class="team-card">
+                <div class="team-photo">
+                    <img src="images/team/angelie-lopez.jpg"
+                         alt="Angelie Lopez">
+                </div>
+
+                <div class="team-info">
+                    <h3>Angelie Lopez</h3>
+                    <div class="team-role">Marketing</div>
+                </div>
+            </article>
+
+
+            <article class="team-card">
+                <div class="team-photo">
+                    <img src="images/team/mira-bhatt.jpg"
+                         alt="Mira M. Bhatt">
+                </div>
+
+                <div class="team-info">
+                    <h3>Mira M. Bhatt</h3>
+                    <div class="team-role">Marketing</div>
+                </div>
+            </article>
+
+
+        </div>
+
     </div>
 
-  </div>
+</section>
 
-  <div class="footer-copyright">
-    © 2026 Access 2 Justice · University of Calgary
-  </div>
-</footer>
+
+
+<!-- =========================================
+     OUTREACH & PARTNERSHIPS
+========================================= -->
+
+<section class="team-section">
+
+    <div class="container">
+
+        <div class="section-header">
+            <h2>Outreach & Partnerships</h2>
+            <div class="section-number">04</div>
+        </div>
+
+
+        <div class="team-grid">
+
+
+            <article class="team-card">
+
+                <div class="team-photo">
+                    <img src="images/team/salem-ferrow.jpg"
+                         alt="Salem Ferrow">
+                </div>
+
+                <div class="team-info">
+                    <h3>Salem Ferrow</h3>
+                    <div class="team-role">
+                        Outreach
+                    </div>
+                </div>
+
+            </article>
+
+
+            <article class="team-card">
+
+                <div class="team-photo">
+                    <img src="images/team/torie-rogers.jpg"
+                         alt="Torie Rogers">
+                </div>
+
+                <div class="team-info">
+                    <h3>Torie Rogers</h3>
+                    <div class="team-role">
+                        Outreach
+                    </div>
+                </div>
+
+            </article>
+
+
+            <article class="team-card">
+
+                <div class="team-photo">
+                    <img src="images/team/kiarah-loree.jpg"
+                         alt="Kiarah Loree">
+                </div>
+
+                <div class="team-info">
+                    <h3>Kiarah Loree</h3>
+                    <div class="team-role">
+                        Community Partnership Coordinator
+                    </div>
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     ACADEMIC
+========================================= -->
+
+<section class="team-section">
+
+    <div class="container">
+
+        <div class="section-header">
+            <h2>Academic</h2>
+            <div class="section-number">05</div>
+        </div>
+
+
+        <div class="team-grid">
+
+
+            <article class="team-card">
+
+                <div class="team-photo">
+                    <img src="images/team/vannika-sharma.jpg"
+                         alt="Vannika Sharma">
+                </div>
+
+                <div class="team-info">
+                    <h3>Vannika Sharma</h3>
+                    <div class="team-role">
+                        Academic
+                    </div>
+                </div>
+
+            </article>
+
+
+            <article class="team-card">
+
+                <div class="team-photo">
+                    <img src="images/team/taran-grewal.jpg"
+                         alt="Taran Grewal">
+                </div>
+
+                <div class="team-info">
+                    <h3>Taran Grewal</h3>
+                    <div class="team-role">
+                        Academic
+                    </div>
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     GROUP PHOTO
+========================================= -->
+
+<section class="group-section">
+
+    <div class="container">
+
+        <div class="group-title">
+
+            <div class="eyebrow">
+                One Team
+            </div>
+
+            <h2>
+                Built together.
+            </h2>
+
+            <p>
+                Different roles, one shared commitment: making justice,
+                legal education, and community engagement more accessible.
+            </p>
+
+        </div>
+
+
+        <div class="main-group-photo">
+
+            <img
+                src="images/team/a2j-group-photo.jpg"
+                alt="Access 2 Justice Executive Council">
+
+        </div>
+
+
+
+        <!-- OPTIONAL CANDID PHOTOS -->
+
+        <div class="gallery">
+
+            <div class="gallery-item">
+                <img src="images/team/team-candid-1.jpg"
+                     alt="A2J team">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/team/team-candid-2.jpg"
+                     alt="A2J team">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/team/team-candid-3.jpg"
+                     alt="A2J team">
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     CLOSING
+========================================= -->
+
+<section class="closing-section">
+
+    <div class="container">
+
+        <p>
+            Access 2 Justice
+        </p>
+
+        <h2>
+            Students building a more accessible justice system.
+        </h2>
+
+    </div>
+
+</section>
+
+
+</body>
+</html>

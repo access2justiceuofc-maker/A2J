@@ -26,25 +26,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About | Access 2 Justice</title>
 
   <style>
     :root {
-      --navy: #17233f;
-      --gold: #b69562;
-      --cream: #f8f4ed;
-      --soft: #eee6da;
+      --navy: #1c2742;
+      --gold: #b89a6a;
+      --cream: #f7f3ec;
       --white: #ffffff;
-      --text: #4e4e4e;
-      --border: #ded6cb;
+      --text: #5a5a5a;
+      --border: #ded7cc;
     }
 
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     body {
@@ -54,376 +53,190 @@
       line-height: 1.7;
     }
 
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
     h1, h2, h3 {
       font-family: Georgia, "Times New Roman", serif;
       color: var(--navy);
       font-weight: 500;
     }
-   .container {
-      width: min(1120px, 90%);
-      margin: auto;
-  
-    }
 
     .eyebrow {
       color: var(--gold);
       text-transform: uppercase;
-      letter-spacing: 0.24em;
+      letter-spacing: 0.22em;
       font-size: 0.78rem;
       font-weight: 700;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
 
     /* HERO */
 
-    .hero {
-      padding: 120px 0 100px;
+    .about-hero {
       text-align: center;
+      padding: 110px 0 90px;
     }
 
-    .hero h1 {
-      font-size: clamp(3.2rem, 7vw, 5.8rem);
-      line-height: 1.03;
-      max-width: 950px;
+    .about-hero h1 {
+      font-size: clamp(3rem, 7vw, 5.2rem);
+      line-height: 1.05;
+      max-width: 900px;
       margin: 0 auto 28px;
     }
 
-    .hero p {
-      max-width: 820px;
+    .about-hero p {
+      max-width: 760px;
       margin: auto;
-      font-size: 1.14rem;
-      color: #626262;
+      font-size: 1.08rem;
     }
 
-    .hero-highlight {
-      display: inline-block;
-      margin-top: 34px;
-      padding: 12px 22px;
-      border: 1px solid var(--border);
-      border-radius: 50px;
-      background: rgba(255,255,255,0.5);
-      color: var(--navy);
-      font-weight: 600;
+    /* STORY + MISSION */
+
+    .about-intro {
+      padding: 60px 0 100px;
     }
 
-    /* LAW AFFECTS EVERYONE */
-
-    .everyone {
-      background: var(--navy);
-      color: white;
-      padding: 95px 0;
-    }
-
-    .everyone-grid {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 70px;
-      align-items: center;
-    }
-
-    .everyone h2 {
-      color: white;
-      font-size: clamp(2.8rem, 5vw, 4.6rem);
-      line-height: 1.07;
-    }
-
-    .everyone p {
-      color: #dde1e8;
-      font-size: 1.05rem;
-      margin-bottom: 18px;
-    }
-
-    .life-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-      margin-top: 30px;
-    }
-
-    .life-pill {
-      border: 1px solid rgba(255,255,255,0.18);
-      border-radius: 14px;
-      padding: 16px 18px;
-      color: #f0f2f5;
-      background: rgba(255,255,255,0.04);
-    }
-
-    /* STORY */
-
-    .story {
-      padding: 110px 0;
-    }
-
-    .section-heading {
-      max-width: 820px;
-      margin-bottom: 60px;
-    }
-
-    .section-heading h2 {
-      font-size: clamp(2.7rem, 5vw, 4.4rem);
-      line-height: 1.08;
-      margin-bottom: 20px;
-    }
-
-    .story-grid {
+    .about-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 30px;
     }
 
-    .story-card {
-      background: white;
+    .about-card {
+      background: var(--white);
       border: 1px solid var(--border);
-      border-radius: 26px;
-      padding: 44px;
+      border-radius: 24px;
+      padding: 42px;
     }
 
-    .story-card h3 {
-      font-size: 2rem;
-      margin-bottom: 22px;
-    }
-
-    .story-card p + p {
-      margin-top: 18px;
-    }
-
-    /* MISSION */
-
-    .mission {
-      background: var(--soft);
-      padding: 110px 0;
-    }
-
-    .mission-header {
-      max-width: 820px;
-      margin-bottom: 55px;
-    }
-
-    .mission-header h2 {
-      font-size: clamp(2.8rem, 5vw, 4.5rem);
-      line-height: 1.08;
+    .about-card h2 {
+      font-size: 2.2rem;
       margin-bottom: 20px;
     }
 
-    .mission-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
+    .about-card p + p {
+      margin-top: 16px;
     }
 
-    .mission-card {
-      background: rgba(255,255,255,0.65);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 30px;
-    }
-
-    .mission-card span {
-      color: var(--gold);
-      font-weight: 700;
-      font-size: 0.85rem;
-    }
-
-    .mission-card h3 {
-      font-family: Arial, Helvetica, sans-serif;
-      font-weight: 700;
-      font-size: 1.1rem;
-      margin: 14px 0 10px;
-    }
-
-    /* WHO IT IS FOR */
-
-    .for-everyone {
-      padding: 110px 0;
-    }
-
-    .for-everyone-box {
-      background: white;
-      border-radius: 30px;
-      border: 1px solid var(--border);
-      padding: 60px;
-      text-align: center;
-    }
-
-    .for-everyone-box h2 {
-      font-size: clamp(2.8rem, 5vw, 4.4rem);
-      margin-bottom: 22px;
-    }
-
-    .for-everyone-box > p {
-      max-width: 800px;
-      margin: 0 auto 45px;
-      font-size: 1.05rem;
-    }
-
-    .audience-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-      text-align: left;
-    }
-
-    .audience-card {
-      background: var(--cream);
-      border-radius: 18px;
-      padding: 26px;
-    }
-
-    .audience-card h3 {
-      font-family: Arial, Helvetica, sans-serif;
-      font-weight: 700;
-      font-size: 1.05rem;
-      margin-bottom: 8px;
-    }
-
-    /* BENEFITS */
+    /* MEMBER BENEFITS */
 
     .benefits {
-      padding: 110px 0;
+      background: var(--navy);
+      padding: 100px 0;
     }
 
-    .benefits-header {
-      max-width: 800px;
+    .benefits-heading {
       text-align: center;
-      margin: 0 auto 60px;
+      max-width: 760px;
+      margin: 0 auto 55px;
     }
 
-    .benefits-header h2 {
-      font-size: clamp(2.8rem, 5vw, 4.5rem);
+    .benefits-heading .eyebrow {
+      color: #d5bd93;
+    }
+
+    .benefits-heading h2 {
+      color: white;
+      font-size: clamp(2.6rem, 5vw, 4rem);
       margin-bottom: 18px;
+    }
+
+    .benefits-heading p {
+      color: #d9dde5;
     }
 
     .benefits-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      gap: 22px;
     }
 
     .benefit-card {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 22px;
-      padding: 34px;
-      transition: 0.25s ease;
-    }
-
-    .benefit-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 18px 40px rgba(23,35,63,0.08);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 20px;
+      padding: 30px;
     }
 
     .benefit-number {
       color: var(--gold);
-      font-weight: 700;
       font-size: 0.82rem;
-      margin-bottom: 16px;
+      font-weight: 700;
+      margin-bottom: 14px;
     }
 
     .benefit-card h3 {
-      font-size: 1.45rem;
-      margin-bottom: 12px;
-    }
-
-    /* IMPACT */
-
-    .impact {
-      background: var(--navy);
-      padding: 100px 0;
-      color: white;
-    }
-
-    .impact h2 {
-      color: white;
-      text-align: center;
-      font-size: clamp(2.8rem, 5vw, 4.5rem);
-      margin-bottom: 24px;
-    }
-
-    .impact > .container > p {
-      max-width: 800px;
-      text-align: center;
-      margin: 0 auto 50px;
-      color: #dce0e7;
-    }
-
-    .impact-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .impact-card {
-      border-top: 1px solid rgba(255,255,255,0.25);
-      padding-top: 25px;
-    }
-
-    .impact-card h3 {
       color: white;
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 1.1rem;
+      font-size: 1.08rem;
       font-weight: 700;
       margin-bottom: 10px;
     }
 
-    .impact-card p {
-      color: #d4d9e0;
+    .benefit-card p {
+      color: #d4d9e1;
+      font-size: 0.95rem;
     }
 
     /* CTA */
 
-    .cta {
+    .join {
       text-align: center;
-      padding: 110px 0;
+      padding: 100px 0 110px;
     }
 
-    .cta h2 {
-      font-size: clamp(3rem, 5vw, 4.8rem);
-      max-width: 900px;
-      margin: 0 auto 24px;
+    .join h2 {
+      font-size: clamp(2.8rem, 5vw, 4.3rem);
+      max-width: 850px;
+      margin: 0 auto 22px;
+      line-height: 1.08;
     }
 
-    .cta p {
-      max-width: 720px;
-      margin: 0 auto 35px;
-      font-size: 1.06rem;
+    .join p {
+      max-width: 700px;
+      margin: 0 auto 30px;
+      font-size: 1.05rem;
     }
 
-    .cta-button {
+    .join-button {
       display: inline-block;
       text-decoration: none;
       background: var(--navy);
       color: white;
-      padding: 16px 34px;
+      padding: 15px 30px;
       border-radius: 50px;
       font-weight: 700;
+      transition: 0.2s ease;
     }
 
-    @media (max-width: 900px) {
-      .everyone-grid,
-      .story-grid {
+    .join-button:hover {
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 850px) {
+      .about-grid {
         grid-template-columns: 1fr;
       }
 
-      .mission-grid,
-      .audience-grid,
-      .benefits-grid,
-      .impact-grid {
+      .benefits-grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    @media (max-width: 620px) {
-      .mission-grid,
-      .audience-grid,
-      .benefits-grid,
-      .impact-grid,
-      .life-grid {
+    @media (max-width: 600px) {
+      .benefits-grid {
         grid-template-columns: 1fr;
       }
 
-      .story-card,
-      .for-everyone-box {
+      .about-card {
         padding: 30px 24px;
+      }
+
+      .about-hero {
+        padding: 80px 0 65px;
       }
     }
   </style>
@@ -432,259 +245,82 @@
 <body>
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="about-hero">
     <div class="container">
+
       <p class="eyebrow">About Access 2 Justice</p>
 
       <h1>
         Law affects everyone.<br>
-        Understanding it should not be reserved for a few.
+        Understanding it should too.
       </h1>
 
       <p>
-        Access 2 Justice is an undergraduate-led organization built on the belief
-        that legal knowledge should be accessible long before someone enters a
-        courtroom, hires a lawyer, or applies to law school.
+        Access 2 Justice is a student-led organization focused on making legal
+        knowledge more accessible, creating meaningful opportunities for students,
+        and building stronger connections between campus, community, and the legal sector.
       </p>
 
-      <div class="hero-highlight">
-        Not a pre-law club. A community built around access, education and impact.
-      </div>
     </div>
   </section>
 
 
-  <!-- LAW AFFECTS EVERYONE -->
-  <section class="everyone">
-    <div class="container everyone-grid">
-
-      <div>
-        <p class="eyebrow">Why It Matters</p>
-
-        <h2>
-          The law is already part of your life.
-        </h2>
-      </div>
-
-      <div>
-        <p>
-          You do not have to want to become a lawyer for legal literacy to matter.
-          The law shapes the jobs we work, the homes we rent, the businesses we
-          build, the contracts we sign, the education we receive and the rights
-          we rely on.
-        </p>
-
-        <p>
-          Yet many people only begin learning how legal systems work when they
-          are already facing a problem.
-        </p>
-
-        <p>
-          Access 2 Justice exists because understanding your rights, responsibilities
-          and available resources should not depend on your career path,
-          background or access to professional networks.
-        </p>
-
-        <div class="life-grid">
-          <div class="life-pill">Employment & workplace rights</div>
-          <div class="life-pill">Housing & tenancy</div>
-          <div class="life-pill">Contracts & consumer rights</div>
-          <div class="life-pill">Family & community</div>
-          <div class="life-pill">Privacy & technology</div>
-          <div class="life-pill">Education & student rights</div>
-          <div class="life-pill">Business & entrepreneurship</div>
-          <div class="life-pill">Public systems & everyday life</div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- STORY -->
-  <section class="story">
+  <!-- STORY + MISSION -->
+  <section class="about-intro">
     <div class="container">
 
-      <div class="section-heading">
-        <p class="eyebrow">Our Story</p>
+      <div class="about-grid">
 
-        <h2>
-          A2J began with a question: why does legal knowledge feel so inaccessible?
-        </h2>
+        <div class="about-card">
+          <p class="eyebrow">Our Story</p>
 
-        <p>
-          Access 2 Justice was created at the University of Calgary from a desire
-          to make conversations about law and justice more understandable,
-          approachable and useful to ordinary people.
-        </p>
-      </div>
-
-      <div class="story-grid">
-
-        <div class="story-card">
-          <h3>Where We Started</h3>
+          <h2>Why A2J was created.</h2>
 
           <p>
-            Too often, legal education begins only after someone decides they want
-            to become a lawyer, or after a person is already dealing with a legal
-            issue.
+            Access 2 Justice began with a simple idea: legal knowledge should not
+            only become important when someone enters law school or finds themselves
+            facing a legal problem.
           </p>
 
           <p>
-            We saw an opportunity to create something different: an organization
-            where students from every discipline could learn about the systems
-            that affect their lives while also contributing to meaningful
-            access-to-justice work.
+            The law shapes everyday life — our workplaces, housing, education,
+            businesses, rights, responsibilities and communities.
           </p>
 
           <p>
-            A2J grew from conversations between students into a broader initiative
-            focused on education, service, professional connection and community
-            engagement.
+            A2J was created to make those conversations easier to access while giving
+            undergraduate students meaningful ways to learn, volunteer, build skills
+            and contribute to the community.
           </p>
         </div>
 
-        <div class="story-card">
-          <h3>What We Are Building</h3>
+
+        <div class="about-card">
+          <p class="eyebrow">Our Mission</p>
+
+          <h2>Make justice more understandable and accessible.</h2>
 
           <p>
-            We are building a space where undergraduate students can understand
-            the law without needing a legal background, develop meaningful
-            professional skills and participate in projects that extend beyond
-            the classroom.
+            Our mission is to strengthen legal literacy by creating accessible
+            educational opportunities, community initiatives and meaningful
+            student experiences.
           </p>
 
           <p>
-            That means workshops that make legal topics easier to understand,
-            volunteer projects that connect students to the community, events that
-            bring people into conversations about justice and partnerships that
-            create real opportunities.
+            We bring students together with professionals, organizations and
+            community partners to learn about the systems that shape everyday life
+            and help make those systems easier to understand.
           </p>
 
           <p>
-            Our goal is not simply to talk about access to justice. It is to
-            actively contribute to it.
+            A2J is not only for students pursuing law. It is for anyone who believes
+            people should better understand the rights, responsibilities and systems
+            that affect them.
           </p>
         </div>
 
       </div>
-    </div>
-  </section>
 
-
-  <!-- MISSION -->
-  <section class="mission">
-    <div class="container">
-
-      <div class="mission-header">
-        <p class="eyebrow">Our Mission</p>
-
-        <h2>
-          Make legal knowledge easier to understand and opportunities easier to access.
-        </h2>
-
-        <p>
-          A2J works at the intersection of legal literacy, student development,
-          community service and public education.
-        </p>
-      </div>
-
-      <div class="mission-grid">
-
-        <div class="mission-card">
-          <span>01</span>
-          <h3>Make Law Understandable</h3>
-          <p>
-            Turn complicated legal topics into plain-language conversations,
-            workshops and resources people can actually use.
-          </p>
-        </div>
-
-        <div class="mission-card">
-          <span>02</span>
-          <h3>Expand Access</h3>
-          <p>
-            Help students and community members better understand rights,
-            resources and pathways to support.
-          </p>
-        </div>
-
-        <div class="mission-card">
-          <span>03</span>
-          <h3>Create Opportunity</h3>
-          <p>
-            Connect students with volunteer work, experiential learning,
-            professional development and community initiatives.
-          </p>
-        </div>
-
-        <div class="mission-card">
-          <span>04</span>
-          <h3>Build Community</h3>
-          <p>
-            Bring together students, professionals, organizations and community
-            members around a shared commitment to a more accessible justice system.
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- WHO A2J IS FOR -->
-  <section class="for-everyone">
-    <div class="container">
-
-      <div class="for-everyone-box">
-        <p class="eyebrow">Who We Are For</p>
-
-        <h2>
-          You do not need to be pre-law to belong here.
-        </h2>
-
-        <p>
-          A2J is intentionally interdisciplinary. Justice intersects with nearly
-          every field, and our community is stronger when students bring different
-          perspectives, experiences and areas of study into the conversation.
-        </p>
-
-        <div class="audience-grid">
-
-          <div class="audience-card">
-            <h3>Business Students</h3>
-            <p>
-              Understand contracts, employment, corporate responsibility,
-              consumer protection and the legal environment surrounding business.
-            </p>
-          </div>
-
-          <div class="audience-card">
-            <h3>Health & Science Students</h3>
-            <p>
-              Explore questions involving consent, privacy, ethics, regulation,
-              professional responsibility and public policy.
-            </p>
-          </div>
-
-          <div class="audience-card">
-            <h3>Arts & Social Sciences</h3>
-            <p>
-              Connect law to politics, sociology, inequality, public policy,
-              human rights and community institutions.
-            </p>
-          </div>
-
-          <div class="audience-card">
-            <h3>Students From Every Faculty</h3>
-            <p>
-              Build practical knowledge about rights, systems and resources that
-              matter regardless of your degree or future profession.
-            </p>
-          </div>
-
-        </div>
-      </div>
     </div>
   </section>
 
@@ -693,18 +329,19 @@
   <section class="benefits">
     <div class="container">
 
-      <div class="benefits-header">
-        <p class="eyebrow">What Membership Gives You</p>
+      <div class="benefits-heading">
 
-        <h2>
-          Learn something. Do something. Leave with something.
-        </h2>
+        <p class="eyebrow">Membership</p>
+
+        <h2>What you get when you join A2J.</h2>
 
         <p>
-          Membership is designed to create tangible value through experience,
-          service, recognition and professional connection.
+          Membership gives students access to opportunities designed to build
+          experience, create connections and make a meaningful contribution.
         </p>
+
       </div>
+
 
       <div class="benefits-grid">
 
@@ -712,8 +349,8 @@
           <p class="benefit-number">01</p>
           <h3>Volunteer Opportunities</h3>
           <p>
-            Participate in outreach, legal-literacy projects, community events,
-            public education initiatives, fundraising and partner opportunities.
+            Take part in A2J events, community outreach, legal-literacy projects
+            and partner initiatives.
           </p>
         </div>
 
@@ -722,7 +359,7 @@
           <h3>Internships & Opportunities</h3>
           <p>
             Receive access to internship postings, experiential opportunities
-            and professional opportunities shared through A2J's growing network.
+            and opportunities shared through our growing network.
           </p>
         </div>
 
@@ -730,8 +367,8 @@
           <p class="benefit-number">03</p>
           <h3>Signed Certificates</h3>
           <p>
-            Eligible members may receive signed certificates recognizing
-            meaningful volunteer service, project involvement and contributions.
+            Eligible members can receive signed recognition for meaningful
+            volunteer work and participation in A2J initiatives.
           </p>
         </div>
 
@@ -739,96 +376,53 @@
           <p class="benefit-number">04</p>
           <h3>Professional Connections</h3>
           <p>
-            Meet lawyers, professors, legal organizations, community leaders
-            and professionals through events, panels and collaborative initiatives.
+            Connect with lawyers, professors, legal organizations and community
+            leaders through A2J events and partnerships.
           </p>
         </div>
 
         <div class="benefit-card">
           <p class="benefit-number">05</p>
-          <h3>Practical Skills</h3>
+          <h3>Practical Experience</h3>
           <p>
-            Develop research, communication, leadership, teamwork, outreach,
-            project management and public-engagement experience.
+            Develop communication, leadership, research, outreach and project
+            experience outside the classroom.
           </p>
         </div>
 
         <div class="benefit-card">
           <p class="benefit-number">06</p>
-          <h3>Real Community Impact</h3>
+          <h3>Community Impact</h3>
           <p>
             Contribute to initiatives designed to improve legal awareness,
-            strengthen community connections and advance access to justice.
+            public education and access to justice.
           </p>
         </div>
 
       </div>
-    </div>
-  </section>
 
-
-  <!-- IMPACT -->
-  <section class="impact">
-    <div class="container">
-
-      <h2>
-        Access to justice begins before someone needs a lawyer.
-      </h2>
-
-      <p>
-        It begins with understanding. With awareness. With knowing your rights,
-        knowing where to go and knowing that the legal system is something you
-        are entitled to understand.
-      </p>
-
-      <div class="impact-grid">
-
-        <div class="impact-card">
-          <h3>Education</h3>
-          <p>
-            We make legal information less intimidating and more accessible.
-          </p>
-        </div>
-
-        <div class="impact-card">
-          <h3>Opportunity</h3>
-          <p>
-            We create pathways for students to gain meaningful experience and
-            contribute before entering professional careers.
-          </p>
-        </div>
-
-        <div class="impact-card">
-          <h3>Community</h3>
-          <p>
-            We connect students with the people and organizations already working
-            to make justice more accessible.
-          </p>
-        </div>
-
-      </div>
     </div>
   </section>
 
 
   <!-- CTA -->
-  <section class="cta">
+  <section class="join">
     <div class="container">
 
-      <p class="eyebrow">Become Part of A2J</p>
+      <p class="eyebrow">Join Access 2 Justice</p>
 
       <h2>
-        You may never become a lawyer. The law will still affect your life.
+        You do not need to study law to understand the law.
       </h2>
 
       <p>
-        Join a community built around understanding the systems around us,
-        helping others navigate them and creating meaningful opportunities for
-        students to contribute to a more accessible justice system.
+        Whatever your degree or career path, A2J gives you the opportunity to
+        learn more about the systems around you, build meaningful experience,
+        and contribute to something bigger than yourself.
       </p>
 
-      <a href="Join.html" class="cta-button">
-        Join Access 2 Justice →
+      <a href="Membership.html" class="join-button">
+        Become a Member →
       </a>
 
     </div>
